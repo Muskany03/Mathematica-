@@ -1,0 +1,1657 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     53716,       1647]
+NotebookOptionsPosition[     44575,       1494]
+NotebookOutlinePosition[     44978,       1510]
+CellTagsIndexPosition[     44935,       1507]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["\<\
+PRACTICAL - 10
+TO COMPUTE THE POLES AND CORRESPONDING RESIDUES OF COMPLEX FUNCTIONS\
+\>", "Subtitle",
+ FontSize->36,
+ Background->RGBColor[
+  0.94, 0.91, 0.88],ExpressionUUID->"d6f50454-520e-459f-8ec8-49a46b9f59b4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Normal", "[", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{"1", "/", "z"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"z", ",", "0", ",", "5"}], "}"}]}], "]"}], "]"}], "\n", 
+ RowBox[{"Residue", "[", 
+  RowBox[{
+   RowBox[{"1", "/", "z"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0"}], "}"}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"8d07f1ca-73a6-4285-af5c-7a9c20e58c4d"],
+
+Cell[BoxData[
+ FractionBox["1", "z"]], "Output",
+ CellLabel->
+  "Out[52]= ",ExpressionUUID->"c127f636-eb6b-4ecc-91fe-b66d8015615f"],
+
+Cell[BoxData["1"], "Output",
+ CellLabel->
+  "Out[53]= ",ExpressionUUID->"f07450bc-f620-45be-ac0d-41ec6f51bef0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "2"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "2"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "2", ",", "3"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Residue", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "2"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "2"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "2"}], "}"}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"d384c9e1-6a9a-4d1b-9c5a-9919fa8d20da"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["4", 
+    RowBox[{"z", "-", "2"}]], "+", "4", "+", 
+   RowBox[{"(", 
+    RowBox[{"z", "-", "2"}], ")"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "2"}], "]"}], "4"],
+    SeriesData[z, 2, {}, -1, 4, 1],
+    Editable->False]}],
+  SeriesData[z, 2, {4, 4, 1}, -1, 4, 1],
+  Editable->False]], "Output",
+ CellLabel->
+  "Out[56]= ",ExpressionUUID->"1f0edc1f-daca-4220-a275-0842159e84ef"],
+
+Cell[BoxData["4"], "Output",
+ CellLabel->
+  "Out[57]= ",ExpressionUUID->"da0a9769-9f34-44f1-9134-5a74de93fb1d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "3"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "2"}], ")"}], "^", "3"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "2", ",", "5"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Residue", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "3"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "2"}], ")"}], "^", "3"}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "2"}], "}"}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"860bff06-1685-48eb-8ffe-71a8c6ef1e7d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["8", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "2"}], ")"}], "3"]], "+", 
+   FractionBox["12", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "2"}], ")"}], "2"]], "+", 
+   FractionBox["6", 
+    RowBox[{"z", "-", "2"}]], "+", "1", "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "2"}], "]"}], "6"],
+    SeriesData[z, 2, {}, -3, 6, 1],
+    Editable->False]}],
+  SeriesData[z, 2, {8, 12, 6, 1}, -3, 6, 1],
+  Editable->False]], "Output",
+ CellLabel->
+  "Out[58]= ",ExpressionUUID->"36a9a732-3ce7-4baf-b98f-fe0dfe3b3a33"],
+
+Cell[BoxData["6"], "Output",
+ CellLabel->
+  "Out[59]= ",ExpressionUUID->"250a9251-ff63-4778-bde9-431ac80b2828"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "4"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "1", ",", "5"}], "}"}]}], "]"}], "\n", 
+ RowBox[{"Residue", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "4"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "1"}], "}"}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"0ea5e150-3c30-48b2-8860-25f6360e0199"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{"3", " ", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}]}]]}], "-", 
+   FractionBox["13", "9"], "-", 
+   FractionBox[
+    RowBox[{"67", " ", 
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}]}], "27"], "-", 
+   RowBox[{
+    FractionBox["175", "81"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "2"]}], "-", 
+   RowBox[{
+    FractionBox["256", "243"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "3"]}], "-", 
+   RowBox[{
+    FractionBox["256", "729"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "4"]}], "-", 
+   FractionBox[
+    RowBox[{"256", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}], "5"]}], "2187"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "1"}], "]"}], "6"],
+    SeriesData[z, 1, {}, -1, 6, 1],
+    Editable->False]}],
+  SeriesData[z, 1, {
+    Rational[-1, 3], 
+    Rational[-13, 9], 
+    Rational[-67, 27], 
+    Rational[-175, 81], 
+    Rational[-256, 243], 
+    Rational[-256, 729], 
+    Rational[-256, 2187]}, -1, 6, 1],
+  Editable->False]], "Output",
+ CellLabel->
+  "Out[60]= ",ExpressionUUID->"4a46837e-f317-4d10-abe8-89fd2d989434"],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["1", "3"]}]], "Output",
+ CellLabel->
+  "Out[61]= ",ExpressionUUID->"b979c633-d574-4ab8-bde5-a0ccd38cb6a6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Residue", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "4"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}]}], ")"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "4"}], "}"}]}], "]"}]], "Input",
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"4e3cc02b-1d85-409b-ad94-4fcdc9099732"],
+
+Cell[BoxData[
+ FractionBox["256", "3"]], "Output",
+ CellLabel->
+  "Out[62]= ",ExpressionUUID->"431fc20c-5359-42bd-be0f-39c12863796a"]
+}, Open  ]],
+
+Cell["\<\
+Ques 1) Find all the residue of  f[z]= 1/(z^4-z^3-2 z^2) by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"8edf4797-81ff-4120-a582-e8ac1b131b7f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"z", "^", "4"}], "-", 
+      RowBox[{"z", "^", "3"}], "-", 
+      RowBox[{"2", " ", 
+       RowBox[{"z", "^", "2"}]}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "4"}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"8b23d254-5953-4f7f-9e89-6638e5596c21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "2"}], "}"}]}],
+  SequenceForm["Singularities are ", {-1, 0, 0, 2}],
+  Editable->False]], "Print",ExpressionUUID->"f797c271-442c-48c2-9c25-\
+3b6c28cb0bcb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox["1", "3"]}]}],
+  SequenceForm["Residue at ", -1, " is ", 
+   Rational[-1, 3]],
+  Editable->False]], "Print",ExpressionUUID->"46bbfa10-8d71-427f-a092-\
+625d93f664ba"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "4"]}],
+  SequenceForm["Residue at ", 0, " is ", 
+   Rational[1, 4]],
+  Editable->False]], "Print",ExpressionUUID->"5686b692-cfee-4f57-91a8-\
+311bb48ad9fe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "4"]}],
+  SequenceForm["Residue at ", 0, " is ", 
+   Rational[1, 4]],
+  Editable->False]], "Print",ExpressionUUID->"77150bfe-2635-447e-bba3-\
+b6001729c239"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "12"]}],
+  SequenceForm["Residue at ", 2, " is ", 
+   Rational[1, 12]],
+  Editable->False]], "Print",ExpressionUUID->"4853e68a-6f41-4832-a6de-\
+b5578d0f1dd9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"z", ",", "s", ",", "res"}], "]"}]], "Input",
+ CellLabel->
+  "In[17]:= ",ExpressionUUID->"32f4ca4f-6db6-484c-b28c-d59eb9bc4402"],
+
+Cell["\<\
+Ques 2) Find all the residue of f[z]=(5 z-2)/(z (z-1)) by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"6a817862-cbd0-4b9b-9b98-846cbfabbd19"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"5", " ", "z"}], "-", "2"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"z", " ", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", "2"}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"ae3fddf8-9cdd-4f41-917a-f5f673bd5449"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}],
+  SequenceForm["Singularities are ", {0, 1}],
+  Editable->False]], "Print",ExpressionUUID->"73313390-951a-4315-964b-\
+5a3e46745b49"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm["Residue at ", 0, " is ", 2],
+  Editable->False]], "Print",ExpressionUUID->"6da282d5-21e3-4a09-ac3d-\
+6f84b6e7ba5d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", "3"}],
+  SequenceForm["Residue at ", 1, " is ", 3],
+  Editable->False]], "Print",ExpressionUUID->"06da4828-64cd-4e00-836c-\
+01952712eb30"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 3) Find all the residue of  f[z]= z^2/ ((z-2)(z-1)(z-3)) by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"251e4941-5ef4-4926-8ef2-7e027ff94555"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"z", "^", "2"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "2"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "3"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"a4387aba-4e7b-45a0-845e-6b00b0741838"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}],
+  SequenceForm["Singularities are ", {1, 2, 3}],
+  Editable->False]], "Print",ExpressionUUID->"57d5da5c-f29c-4264-b668-\
+438fc64a5d2f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "2"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[1, 2]],
+  Editable->False]], "Print",ExpressionUUID->"55d56f81-87e4-4c05-8522-\
+9e00888fcf70"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "4"}]}],
+  SequenceForm["Residue at ", 2, " is ", -4],
+  Editable->False]], "Print",ExpressionUUID->"b009403f-73c4-48bb-b7ec-\
+79acab017b67"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["9", "2"]}],
+  SequenceForm["Residue at ", 3, " is ", 
+   Rational[9, 2]],
+  Editable->False]], "Print",ExpressionUUID->"a9c5b380-bf8a-460c-a63a-\
+609307174384"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 4) Find all the residue of f[z]= (z^2+16)/ (((z-I)^2)(z+3)) by locating \
+the singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"8ee77f7c-b8c2-4890-b406-f86774c9b367"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"z", "^", "2"}], "+", "16"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"z", "-", "I"}], ")"}], "^", "2"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "+", "3"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"eb866b3f-a6a3-4ae5-892e-ea055316a299"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "\[ImaginaryI]", ",", "\[ImaginaryI]"}], "}"}]}],
+  SequenceForm["Singularities are ", {-3, 
+    Complex[0, 1], 
+    Complex[0, 1]}],
+  Editable->False]], "Print",ExpressionUUID->"62ac4677-f90d-4e6b-ab44-\
+4dbff64f6c1b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "3"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"2", "-", 
+    FractionBox[
+     RowBox[{"3", " ", "\[ImaginaryI]"}], "2"]}]}],
+  SequenceForm["Residue at ", -3, " is ", 
+   Complex[2, 
+    Rational[-3, 2]]],
+  Editable->False]], "Print",ExpressionUUID->"412f5550-0c40-4fce-af9c-\
+91ae2511c20e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "\[ImaginaryI]", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox[
+     RowBox[{"3", " ", "\[ImaginaryI]"}], "2"]}]}],
+  SequenceForm["Residue at ", 
+   Complex[0, 1], " is ", 
+   Complex[-1, 
+    Rational[3, 2]]],
+  Editable->False]], "Print",ExpressionUUID->"10e71f31-3fed-41ed-9f43-\
+a546f66db9fc"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "\[ImaginaryI]", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    FractionBox[
+     RowBox[{"3", " ", "\[ImaginaryI]"}], "2"]}]}],
+  SequenceForm["Residue at ", 
+   Complex[0, 1], " is ", 
+   Complex[-1, 
+    Rational[3, 2]]],
+  Editable->False]], "Print",ExpressionUUID->"4a8ad280-eb0c-419b-adf0-\
+d669b1ad719e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 5) Find all the residue of  f[z]= 1/((z+1)^3)  by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"b824e2b2-5252-4e29-a7ed-20bfba35bc8b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "+", "1"}], ")"}], "^", "3"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"dd95082b-cb6c-4177-8011-1f75dfb4bd17"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}]}],
+  SequenceForm["Singularities are ", {-1, -1, -1}],
+  Editable->False]], "Print",ExpressionUUID->"a0422c1d-ef78-4bff-abd5-\
+f7bcd437e8c5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", "0"}],
+  SequenceForm["Residue at ", -1, " is ", 0],
+  Editable->False]], "Print",ExpressionUUID->"45bdf992-ccd4-434d-b913-\
+512b0aaa8c52"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", "0"}],
+  SequenceForm["Residue at ", -1, " is ", 0],
+  Editable->False]], "Print",ExpressionUUID->"400d380d-96d8-4586-a87d-\
+96366c78cc84"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", "0"}],
+  SequenceForm["Residue at ", -1, " is ", 0],
+  Editable->False]], "Print",ExpressionUUID->"79689580-b0fa-4ce5-8958-\
+6e66ddcc353b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 6) Find all the residue of f[z]= - ((Log[z])^3)/((z^2)+1)  by locating \
+the singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"a265ec01-200e-443b-916d-dca5a0fe7521"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"-", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"Log", "[", "z", "]"}], ")"}], "^", "3"}], ")"}]}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "^", "2"}], ")"}], "+", "1"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"be491af5-8c32-498a-be06-ffd0773beb62"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], ",", "\[ImaginaryI]"}], "}"}]}],
+  SequenceForm["Singularities are ", {
+    Complex[0, -1], 
+    Complex[0, 1]}],
+  Editable->False]], "Print",ExpressionUUID->"976f0c6c-96fa-4a85-9935-\
+8aa5aff171ad"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "\[ImaginaryI]"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["\[Pi]", "3"], "16"]}],
+  SequenceForm["Residue at ", 
+   Complex[0, -1], " is ", Rational[1, 16] Pi^3],
+  Editable->False]], "Print",ExpressionUUID->"dad728e1-2d80-428a-8d0b-\
+99fbc500dedb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "\[ImaginaryI]", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["\[Pi]", "3"], "16"]}],
+  SequenceForm["Residue at ", 
+   Complex[0, 1], " is ", Rational[1, 16] Pi^3],
+  Editable->False]], "Print",ExpressionUUID->"5a4b13ed-a37e-4cad-b318-\
+cdcce1befad2"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 7) Find all the residue of f[z]= z/((z-1)*(z+1)) by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"78751408-39ab-4208-aef3-cb371726129b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{"z", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"z", "+", "1"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"e96c130b-25dc-4428-93f8-0beb092b5056"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1"}], "}"}]}],
+  SequenceForm["Singularities are ", {-1, 1}],
+  Editable->False]], "Print",ExpressionUUID->"34aa7d0e-5ddc-4782-9e45-\
+e0f95d89e4a7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox["1", "2"]}],
+  SequenceForm["Residue at ", -1, " is ", 
+   Rational[1, 2]],
+  Editable->False]], "Print",ExpressionUUID->"bd8aebd7-e95e-47d7-a7f2-\
+7459726dd5e4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "2"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[1, 2]],
+  Editable->False]], "Print",ExpressionUUID->"a81f85f6-60f8-4be7-abc3-\
+dbadc68ef6a1"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 8) Find all the residue of f[z]=(2 z+1)/((z^2)-z-2) by locating the \
+singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"a542cfc9-b4be-49a4-8b6e-d6ccd1134a46"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", "z"}], "+", "1"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "^", "2"}], ")"}], "-", "z", "-", "2"}], ")"}]}]}], 
+  ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[0.88, 1, 0.88],
+ CellLabel->"In[1]:=",ExpressionUUID->"4bdd2678-73b1-4098-a1bf-0859ef3a2410"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2"}], "}"}]}],
+  SequenceForm["Singularities are ", {-1, 2}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.825087955590903*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"9f3dd6c1-a9e6-45be-be33-431ebd7cef6e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox["1", "3"]}],
+  SequenceForm["Residue at ", -1, " is ", 
+   Rational[1, 3]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8250879560599236`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"828f4b9d-79f2-480e-bbe6-dcf767a6c27e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["5", "3"]}],
+  SequenceForm["Residue at ", 2, " is ", 
+   Rational[5, 3]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8250879560755496`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"bf878410-c186-46c0-814b-2c630467900d"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 9) Find all the residue of f[z]=(z^3)/(((z-1)^4)*(z-2)*(z-3)) by \
+locating the singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"476a5562-e5fb-4ad7-b4d7-17010d15e7a4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"z", "^", "3"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"z", "-", "1"}], ")"}], "^", "4"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "2"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "3"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"d2af3885-cda1-4637-8015-a0cf94768ed6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "2", ",", "3"}], "}"}]}],
+  SequenceForm["Singularities are ", {1, 1, 1, 1, 2, 3}],
+  Editable->False]], "Print",ExpressionUUID->"6bbd067a-b2f4-4954-88a4-\
+f2b78d6a6c6a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["101", "16"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[101, 16]],
+  Editable->False]], "Print",ExpressionUUID->"3779ca6c-222e-4a38-93d8-\
+5c5c5895f43c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["101", "16"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[101, 16]],
+  Editable->False]], "Print",ExpressionUUID->"adefb5c9-05b8-45b0-ace7-\
+b13b7b55527d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["101", "16"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[101, 16]],
+  Editable->False]], "Print",ExpressionUUID->"55e0ebdd-d2f8-4c2d-82f9-\
+e4325f7c264a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["101", "16"]}],
+  SequenceForm["Residue at ", 1, " is ", 
+   Rational[101, 16]],
+  Editable->False]], "Print",ExpressionUUID->"27a3ac75-0fd9-49dd-95cc-\
+df208ad9d08a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "8"}]}],
+  SequenceForm["Residue at ", 2, " is ", -8],
+  Editable->False]], "Print",ExpressionUUID->"1afb4bce-980a-4464-975e-\
+b170f5c32b06"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "3", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox["27", "16"]}],
+  SequenceForm["Residue at ", 3, " is ", 
+   Rational[27, 16]],
+  Editable->False]], "Print",ExpressionUUID->"50c1e718-36fd-4b9b-948d-\
+abffe7d3f899"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 10) Find all the residue of f[z]=(\[ExponentialE]^z)/((z^4)+(2 z^3)+(2 \
+z^2)) by locating the singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"c2ba3e47-4b7e-4f02-8d5d-33f0dff63db6"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"\[ExponentialE]", "^", "z"}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "^", "4"}], ")"}], "+", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"z", "^", "3"}]}], ")"}], "+", 
+      RowBox[{"(", 
+       RowBox[{"2", " ", 
+        RowBox[{"z", "^", "2"}]}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"0a164af6-d586-4afe-baa5-aeaa8dccc8d1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "1"}], "-", "\[ImaginaryI]"}], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "\[ImaginaryI]"}], ",", "0", ",", "0"}], 
+    "}"}]}],
+  SequenceForm["Singularities are ", {
+    Complex[-1, -1], 
+    Complex[-1, 1], 0, 0}],
+  Editable->False]], "Print",ExpressionUUID->"47560aa6-6415-4dc0-beeb-\
+80a89e16071a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "-", "\[ImaginaryI]"}], 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "1"}], "-", "\[ImaginaryI]"}]], "4"]}],
+  SequenceForm["Residue at ", 
+   Complex[-1, -1], " is ", Rational[1, 4] E^Complex[-1, -1]],
+  Editable->False]], "Print",ExpressionUUID->"bdd64ee4-d3c0-41a5-bef2-\
+d30feb611290"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "\[ImaginaryI]"}], 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "\[ImaginaryI]"}]], "4"]}],
+  SequenceForm["Residue at ", 
+   Complex[-1, 1], " is ", Rational[1, 4] E^Complex[-1, 1]],
+  Editable->False]], "Print",ExpressionUUID->"32cd65f9-89a9-4fb3-9372-\
+2d923d51fb75"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["Residue at ", 0, " is ", 0],
+  Editable->False]], "Print",ExpressionUUID->"dafddaf2-0e24-4317-8f78-\
+860ed974221d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", "0"}],
+  SequenceForm["Residue at ", 0, " is ", 0],
+  Editable->False]], "Print",ExpressionUUID->"56b70abb-410a-4287-a2c6-\
+41a50d62027c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["\<\
+Ques 11) Find all the residue of f[z]=(z^2-2 z)/((z+1)^2*(z^2+4)) by locating \
+the singularities.\
+\>", "Text",
+ FontSize->18,
+ FontColor->RGBColor[0.5019607843137255, 0, 0.5019607843137255],
+ Background->RGBColor[
+  1, 0.9, 0.8],ExpressionUUID->"6ccd16c4-8942-448e-bf21-2af98445c223"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"z", "^", "2"}], "-", 
+      RowBox[{"2", " ", "z"}]}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"z", "+", "1"}], ")"}], "^", "2"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"z", "^", "2"}], "+", "4"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"s", "=", 
+   RowBox[{"z", "/.", 
+    RowBox[{"Solve", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Denominator", "[", 
+        RowBox[{"f", "[", "z", "]"}], "]"}], "==", "0"}], ",", "z"}], 
+     "]"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{"\"\<Singularities are \>\"", ",", "s"}], "]"}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"i", "=", "1"}], ",", 
+   RowBox[{"i", "\[LessEqual]", 
+    RowBox[{"Length", "[", "s", "]"}]}], ",", 
+   RowBox[{"i", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{"res", "=", 
+     RowBox[{"Residue", "[", 
+      RowBox[{
+       RowBox[{"f", "[", "z", "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"z", ",", 
+         RowBox[{"s", "[", 
+          RowBox[{"[", "i", "]"}], "]"}]}], "}"}]}], "]"}]}], ";", "\n", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<Residue at \>\"", ",", 
+      RowBox[{"s", "[", 
+       RowBox[{"[", "i", "]"}], "]"}], ",", "\"\< is \>\"", ",", "res"}], 
+     "]"}]}]}], "]"}]}], "Input",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"d31e8b4e-7ae7-48b2-9c11-029bb180d13d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Singularities are \"\>", "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], ",", 
+     RowBox[{"2", " ", "\[ImaginaryI]"}]}], "}"}]}],
+  SequenceForm["Singularities are ", {-1, -1, 
+    Complex[0, -2], 
+    Complex[0, 2]}],
+  Editable->False]], "Print",ExpressionUUID->"c0bb49be-ec52-49cf-954f-\
+1a356f3d4e58"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox["14", "25"]}]}],
+  SequenceForm["Residue at ", -1, " is ", 
+   Rational[-14, 25]],
+  Editable->False]], "Print",ExpressionUUID->"3decd6f8-cacd-43ba-9bab-\
+46c32b6a22dd"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"-", "1"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"-", 
+    FractionBox["14", "25"]}]}],
+  SequenceForm["Residue at ", -1, " is ", 
+   Rational[-14, 25]],
+  Editable->False]], "Print",ExpressionUUID->"abbc0096-3bf5-40b8-8575-\
+416a7539c478"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], 
+   "\[InvisibleSpace]", "\<\" is \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["7", "25"], "-", 
+    FractionBox["\[ImaginaryI]", "25"]}]}],
+  SequenceForm["Residue at ", 
+   Complex[0, -2], " is ", 
+   Complex[
+    Rational[7, 25], 
+    Rational[-1, 25]]],
+  Editable->False]], "Print",ExpressionUUID->"a1379e09-9d6a-45f9-87a4-\
+b891ea8b9032"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Residue at \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", " ", "\[ImaginaryI]"}], "\[InvisibleSpace]", "\<\" is \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["7", "25"], "+", 
+    FractionBox["\[ImaginaryI]", "25"]}]}],
+  SequenceForm["Residue at ", 
+   Complex[0, 2], " is ", 
+   Complex[
+    Rational[7, 25], 
+    Rational[1, 25]]],
+  Editable->False]], "Print",ExpressionUUID->"15340c2e-789f-428f-b94e-\
+285903d30949"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e68b730d-a56c-46f7-9716-c33b1efd4e22"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 225, 6, 129, "Subtitle",ExpressionUUID->"d6f50454-520e-459f-8ec8-49a46b9f59b4"],
+Cell[CellGroupData[{
+Cell[830, 32, 438, 13, 64, "Input",ExpressionUUID->"8d07f1ca-73a6-4285-af5c-7a9c20e58c4d"],
+Cell[1271, 47, 131, 3, 49, "Output",ExpressionUUID->"c127f636-eb6b-4ecc-91fe-b66d8015615f"],
+Cell[1405, 52, 111, 2, 32, "Output",ExpressionUUID->"f07450bc-f620-45be-ac0d-41ec6f51bef0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1553, 59, 553, 18, 64, "Input",ExpressionUUID->"d384c9e1-6a9a-4d1b-9c5a-9919fa8d20da"],
+Cell[2109, 79, 495, 16, 49, "Output",ExpressionUUID->"1f0edc1f-daca-4220-a275-0842159e84ef"],
+Cell[2607, 97, 111, 2, 32, "Output",ExpressionUUID->"da0a9769-9f34-44f1-9134-5a74de93fb1d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2755, 104, 663, 22, 64, "Input",ExpressionUUID->"860bff06-1685-48eb-8ffe-71a8c6ef1e7d"],
+Cell[3421, 128, 663, 22, 53, "Output",ExpressionUUID->"36a9a732-3ce7-4baf-b98f-fe0dfe3b3a33"],
+Cell[4087, 152, 111, 2, 32, "Output",ExpressionUUID->"250a9251-ff63-4778-bde9-431ac80b2828"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4235, 159, 763, 26, 64, "Input",ExpressionUUID->"0ea5e150-3c30-48b2-8860-25f6360e0199"],
+Cell[5001, 187, 1374, 49, 55, "Output",ExpressionUUID->"4a46837e-f317-4d10-abe8-89fd2d989434"],
+Cell[6378, 238, 149, 4, 49, "Output",ExpressionUUID->"b979c633-d574-4ab8-bde5-a0ccd38cb6a6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6564, 247, 431, 14, 44, "Input",ExpressionUUID->"4e3cc02b-1d85-409b-ad94-4fcdc9099732"],
+Cell[6998, 263, 133, 3, 49, "Output",ExpressionUUID->"431fc20c-5359-42bd-be0f-39c12863796a"]
+}, Open  ]],
+Cell[7146, 269, 287, 7, 54, "Text",ExpressionUUID->"8edf4797-81ff-4120-a582-e8ac1b131b7f"],
+Cell[CellGroupData[{
+Cell[7458, 280, 1368, 43, 140, "Input",ExpressionUUID->"8b23d254-5953-4f7f-9e89-6638e5596c21"],
+Cell[CellGroupData[{
+Cell[8851, 327, 331, 8, 22, "Print",ExpressionUUID->"f797c271-442c-48c2-9c25-3b6c28cb0bcb"],
+Cell[9185, 337, 373, 10, 40, "Print",ExpressionUUID->"46bbfa10-8d71-427f-a092-625d93f664ba"],
+Cell[9561, 349, 332, 8, 40, "Print",ExpressionUUID->"5686b692-cfee-4f57-91a8-311bb48ad9fe"],
+Cell[9896, 359, 332, 8, 40, "Print",ExpressionUUID->"77150bfe-2635-447e-bba3-b6001729c239"],
+Cell[10231, 369, 334, 8, 40, "Print",ExpressionUUID->"4853e68a-6f41-4832-a6de-b5578d0f1dd9"]
+}, Open  ]]
+}, Open  ]],
+Cell[10592, 381, 179, 4, 28, "Input",ExpressionUUID->"32f4ca4f-6db6-484c-b28c-d59eb9bc4402"],
+Cell[10774, 387, 285, 7, 54, "Text",ExpressionUUID->"6a817862-cbd0-4b9b-9b98-846cbfabbd19"],
+Cell[CellGroupData[{
+Cell[11084, 398, 1382, 44, 140, "Input",ExpressionUUID->"ae3fddf8-9cdd-4f41-917a-f5f673bd5449"],
+Cell[CellGroupData[{
+Cell[12491, 446, 283, 7, 22, "Print",ExpressionUUID->"73313390-951a-4315-964b-5a3e46745b49"],
+Cell[12777, 455, 293, 6, 22, "Print",ExpressionUUID->"6da282d5-21e3-4a09-ac3d-6f84b6e7ba5d"],
+Cell[13073, 463, 293, 6, 22, "Print",ExpressionUUID->"06da4828-64cd-4e00-836c-01952712eb30"]
+}, Open  ]]
+}, Open  ]],
+Cell[13393, 473, 292, 7, 54, "Text",ExpressionUUID->"251e4941-5ef4-4926-8ef2-7e027ff94555"],
+Cell[CellGroupData[{
+Cell[13710, 484, 1474, 47, 140, "Input",ExpressionUUID->"a4387aba-4e7b-45a0-845e-6b00b0741838"],
+Cell[CellGroupData[{
+Cell[15209, 535, 296, 7, 22, "Print",ExpressionUUID->"57d5da5c-f29c-4264-b668-438fc64a5d2f"],
+Cell[15508, 544, 332, 8, 40, "Print",ExpressionUUID->"55d56f81-87e4-4c05-8522-9e00888fcf70"],
+Cell[15843, 554, 313, 7, 22, "Print",ExpressionUUID->"b009403f-73c4-48bb-b7ec-79acab017b67"],
+Cell[16159, 563, 332, 8, 40, "Print",ExpressionUUID->"a9c5b380-bf8a-460c-a63a-609307174384"]
+}, Open  ]]
+}, Open  ]],
+Cell[16518, 575, 295, 7, 54, "Text",ExpressionUUID->"8ee77f7c-b8c2-4890-b406-f86774c9b367"],
+Cell[CellGroupData[{
+Cell[16838, 586, 1527, 49, 140, "Input",ExpressionUUID->"eb866b3f-a6a3-4ae5-892e-ea055316a299"],
+Cell[CellGroupData[{
+Cell[18390, 639, 376, 10, 22, "Print",ExpressionUUID->"62ac4677-f90d-4e6b-ab44-4dbff64f6c1b"],
+Cell[18769, 651, 433, 12, 41, "Print",ExpressionUUID->"412f5550-0c40-4fce-af9c-91ae2511c20e"],
+Cell[19205, 665, 461, 13, 41, "Print",ExpressionUUID->"10e71f31-3fed-41ed-9f43-a546f66db9fc"],
+Cell[19669, 680, 461, 13, 41, "Print",ExpressionUUID->"4a8ad280-eb0c-419b-adf0-d669b1ad719e"]
+}, Open  ]]
+}, Open  ]],
+Cell[20157, 697, 282, 7, 54, "Text",ExpressionUUID->"b824e2b2-5252-4e29-a7ed-20bfba35bc8b"],
+Cell[CellGroupData[{
+Cell[20464, 708, 1339, 42, 140, "Input",ExpressionUUID->"dd95082b-cb6c-4177-8011-1f75dfb4bd17"],
+Cell[CellGroupData[{
+Cell[21828, 754, 362, 10, 22, "Print",ExpressionUUID->"a0422c1d-ef78-4bff-abd5-f7bcd437e8c5"],
+Cell[22193, 766, 313, 7, 22, "Print",ExpressionUUID->"45bdf992-ccd4-434d-b913-512b0aaa8c52"],
+Cell[22509, 775, 313, 7, 22, "Print",ExpressionUUID->"400d380d-96d8-4586-a87d-96366c78cc84"],
+Cell[22825, 784, 313, 7, 22, "Print",ExpressionUUID->"79689580-b0fa-4ce5-8958-6e66ddcc353b"]
+}, Open  ]]
+}, Open  ]],
+Cell[23165, 795, 294, 7, 54, "Text",ExpressionUUID->"a265ec01-200e-443b-916d-dca5a0fe7521"],
+Cell[CellGroupData[{
+Cell[23484, 806, 1476, 47, 140, "Input",ExpressionUUID->"be491af5-8c32-498a-be06-ffd0773beb62"],
+Cell[CellGroupData[{
+Cell[24985, 857, 363, 10, 22, "Print",ExpressionUUID->"976f0c6c-96fa-4a85-9935-8aa5aff171ad"],
+Cell[25351, 869, 413, 10, 43, "Print",ExpressionUUID->"dad728e1-2d80-428a-8d0b-99fbc500dedb"],
+Cell[25767, 881, 393, 9, 43, "Print",ExpressionUUID->"5a4b13ed-a37e-4cad-b318-cdcce1befad2"]
+}, Open  ]]
+}, Open  ]],
+Cell[26187, 894, 284, 7, 54, "Text",ExpressionUUID->"78751408-39ab-4208-aef3-cb371726129b"],
+Cell[CellGroupData[{
+Cell[26496, 905, 1394, 44, 140, "Input",ExpressionUUID->"e96c130b-25dc-4428-93f8-0beb092b5056"],
+Cell[CellGroupData[{
+Cell[27915, 953, 305, 8, 22, "Print",ExpressionUUID->"34aa7d0e-5ddc-4782-9e45-e0f95d89e4a7"],
+Cell[28223, 963, 352, 9, 40, "Print",ExpressionUUID->"bd8aebd7-e95e-47d7-a7f2-7459726dd5e4"],
+Cell[28578, 974, 332, 8, 40, "Print",ExpressionUUID->"a81f85f6-60f8-4be7-abc3-dbadc68ef6a1"]
+}, Open  ]]
+}, Open  ]],
+Cell[28937, 986, 287, 7, 54, "Text",ExpressionUUID->"a542cfc9-b4be-49a4-8b6e-d6ccd1134a46"],
+Cell[CellGroupData[{
+Cell[29249, 997, 1450, 46, 140, "Input",ExpressionUUID->"4bdd2678-73b1-4098-a1bf-0859ef3a2410"],
+Cell[CellGroupData[{
+Cell[30724, 1047, 394, 11, 22, "Print",ExpressionUUID->"9f3dd6c1-a9e6-45be-be33-431ebd7cef6e"],
+Cell[31121, 1060, 443, 12, 40, "Print",ExpressionUUID->"828f4b9d-79f2-480e-bbe6-dcf767a6c27e"],
+Cell[31567, 1074, 423, 11, 40, "Print",ExpressionUUID->"bf878410-c186-46c0-814b-2c630467900d"]
+}, Open  ]]
+}, Open  ]],
+Cell[32017, 1089, 297, 7, 54, "Text",ExpressionUUID->"476a5562-e5fb-4ad7-b4d7-17010d15e7a4"],
+Cell[CellGroupData[{
+Cell[32339, 1100, 1569, 50, 140, "Input",ExpressionUUID->"d2af3885-cda1-4637-8015-a0cf94768ed6"],
+Cell[CellGroupData[{
+Cell[33933, 1154, 335, 7, 22, "Print",ExpressionUUID->"6bbd067a-b2f4-4954-88a4-f2b78d6a6c6a"],
+Cell[34271, 1163, 338, 8, 40, "Print",ExpressionUUID->"3779ca6c-222e-4a38-93d8-5c5c5895f43c"],
+Cell[34612, 1173, 338, 8, 40, "Print",ExpressionUUID->"adefb5c9-05b8-45b0-ace7-b13b7b55527d"],
+Cell[34953, 1183, 338, 8, 40, "Print",ExpressionUUID->"55e0ebdd-d2f8-4c2d-82f9-e4325f7c264a"],
+Cell[35294, 1193, 338, 8, 40, "Print",ExpressionUUID->"27a3ac75-0fd9-49dd-95cc-df208ad9d08a"],
+Cell[35635, 1203, 313, 7, 22, "Print",ExpressionUUID->"1afb4bce-980a-4464-975e-b170f5c32b06"],
+Cell[35951, 1212, 336, 8, 40, "Print",ExpressionUUID->"50c1e718-36fd-4b9b-948d-abffe7d3f899"]
+}, Open  ]]
+}, Open  ]],
+Cell[36314, 1224, 312, 7, 54, "Text",ExpressionUUID->"c2ba3e47-4b7e-4f02-8d5d-33f0dff63db6"],
+Cell[CellGroupData[{
+Cell[36651, 1235, 1582, 50, 140, "Input",ExpressionUUID->"0a164af6-d586-4afe-baa5-aeaa8dccc8d1"],
+Cell[CellGroupData[{
+Cell[38258, 1289, 471, 14, 22, "Print",ExpressionUUID->"47560aa6-6415-4dc0-beeb-80a89e16071a"],
+Cell[38732, 1305, 520, 13, 43, "Print",ExpressionUUID->"bdd64ee4-d3c0-41a5-bef2-d30feb611290"],
+Cell[39255, 1320, 518, 13, 43, "Print",ExpressionUUID->"32cd65f9-89a9-4fb3-9372-2d923d51fb75"],
+Cell[39776, 1335, 293, 6, 22, "Print",ExpressionUUID->"dafddaf2-0e24-4317-8f78-860ed974221d"],
+Cell[40072, 1343, 293, 6, 22, "Print",ExpressionUUID->"56b70abb-410a-4287-a2c6-41a50d62027c"]
+}, Open  ]]
+}, Open  ]],
+Cell[40392, 1353, 296, 7, 54, "Text",ExpressionUUID->"6ccd16c4-8942-448e-bf21-2af98445c223"],
+Cell[CellGroupData[{
+Cell[40713, 1364, 1557, 50, 140, "Input",ExpressionUUID->"d31e8b4e-7ae7-48b2-9c11-029bb180d13d"],
+Cell[CellGroupData[{
+Cell[42295, 1418, 486, 14, 22, "Print",ExpressionUUID->"c0bb49be-ec52-49cf-954f-1a356f3d4e58"],
+Cell[42784, 1434, 377, 10, 40, "Print",ExpressionUUID->"3decd6f8-cacd-43ba-9bab-46c32b6a22dd"],
+Cell[43164, 1446, 377, 10, 40, "Print",ExpressionUUID->"abbc0096-3bf5-40b8-8575-416a7539c478"],
+Cell[43544, 1458, 505, 15, 41, "Print",ExpressionUUID->"a1379e09-9d6a-45f9-87a4-b891ea8b9032"],
+Cell[44052, 1475, 483, 14, 41, "Print",ExpressionUUID->"15340c2e-789f-428f-b94e-285903d30949"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

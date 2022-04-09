@@ -1,0 +1,1308 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     44505,       1300]
+NotebookOptionsPosition[     40120,       1223]
+NotebookOutlinePosition[     40551,       1240]
+CellTagsIndexPosition[     40508,       1237]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "                                                                            \
+                                                     ",
+ StyleBox["Practical 9",
+  FontWeight->"Bold"]
+}], "Text",
+ CellChangeTimes->{{3.8241781166191607`*^9, 3.824178135125044*^9}, {
+   3.8241783585142236`*^9, 3.824178360020965*^9}, 3.8241784267845917`*^9, {
+   3.8241797032081437`*^9, 3.8241797250987425`*^9}, {3.824832832496627*^9, 
+   3.8248328327287407`*^9}, {3.8248330263025618`*^9, 3.824833027621889*^9}, {
+   3.8248333654272747`*^9, 
+   3.824833367031152*^9}},ExpressionUUID->"7c82c76c-38ea-4cda-a555-\
+7de537e246b9"],
+
+Cell["\<\
+To perform Laurent series expansion of the given function f (z) around a \
+given point z \
+\>", "Text",
+ CellChangeTimes->{{3.8241783620174403`*^9, 3.8241784339954343`*^9}, 
+   3.824178491677687*^9},
+ Background->RGBColor[
+  0.87, 0.94, 1],ExpressionUUID->"955b38e0-ea00-4680-9c8d-e76e49ee9178"],
+
+Cell[BoxData[
+ RowBox[{"Definition", ":", 
+  RowBox[{"If", " ", "f", 
+   RowBox[{"(", "z", ")"}], " ", "is", " ", "analytic", " ", "in", " ", "an", 
+   " ", "annulus", " ", 
+   SubscriptBox["R", "1"], 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"z", "-", 
+       SubscriptBox["z", "0"]}], "|", 
+      RowBox[{"<", 
+       SubscriptBox["R", "2"]}]}], ",", " ", 
+     RowBox[{"the", " ", "series", " ", "\[IndentingNewLine]", 
+      RowBox[{
+       UnderoverscriptBox["\[Sum]", 
+        RowBox[{"n", "=", 
+         RowBox[{"-", "\[Infinity]"}]}], "\[Infinity]"], 
+       RowBox[{
+        SubscriptBox["c", "n"], 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"z", "-", 
+           SubscriptBox["z", "o"]}], ")"}], "n"], "\[IndentingNewLine]", "is",
+         " ", "called", " ", "the", " ", "laurent", " ", "series", " ", 
+        "expension", " ", "of", " ", 
+        RowBox[{"f", "."}]}]}]}]}]}]}]}]], "Text",
+ CellChangeTimes->{{3.824178628849546*^9, 3.8241786769238777`*^9}, 
+   3.8241787405114326`*^9, {3.8241791406291656`*^9, 3.8241792186374083`*^9}, 
+   3.824179358880583*^9},ExpressionUUID->"72283109-9ce6-4aca-906e-\
+efe9a6735df6"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Question", " ", "1"}], ")"}], " ", "f", 
+   RowBox[{"(", "z", ")"}]}], " ", "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"(", 
+      RowBox[{"Sinz", "-", "1"}], ")"}], 
+     SuperscriptBox["z", "4"]], "  ", "around", " ", "z"}], "=", 
+   "0"}]}]], "Text",
+ CellChangeTimes->{{3.8241786826605616`*^9, 3.824178745276997*^9}},
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"23654efc-50aa-4765-b8e3-15a4ea8499e5"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   FractionBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Sin", "[", "z", "]"}], "-", "1"}], ")"}], 
+    SuperscriptBox["z", "4"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zo", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "zo", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent series expantion of \>\"", ",", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z=\>\"", ",", "zo", ",", 
+   "\"\< is : \\n\>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}], ",", "\"\<+.....\>\""}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8241788137120805`*^9, 3.8241789376810865`*^9}, {
+  3.8241790078209095`*^9, 3.824179040115204*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c32d6898-fa59-4755-953a-52729a3efb67"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent series expantion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"-", "1"}], "+", 
+     RowBox[{"Sin", "[", "z", "]"}]}], 
+    SuperscriptBox["z", "4"]], "\[InvisibleSpace]", "\<\" around z=\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "\<\" is : \\n\"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", 
+      SuperscriptBox["z", "4"]]}], "+", 
+    FractionBox["1", 
+     SuperscriptBox["z", "3"]], "-", 
+    FractionBox["1", 
+     RowBox[{"6", " ", "z"}]], "+", 
+    FractionBox["z", "120"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "3"], "5040"], "+", 
+    FractionBox[
+     SuperscriptBox["z", "5"], "362880"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "7"], "39916800"], "+", 
+    FractionBox[
+     SuperscriptBox["z", "9"], "6227020800"]}], 
+   "\[InvisibleSpace]", "\<\"+.....\"\>"}],
+  SequenceForm[
+  "Laurent series expantion of ", $CellContext`z^(-4) (-1 + 
+    Sin[$CellContext`z]), " around z=", 0, 
+   " is : \n", (-1) $CellContext`z^(-4) + $CellContext`z^(-3) + 
+   Rational[-1, 6]/$CellContext`z + Rational[1, 120] $CellContext`z + 
+   Rational[-1, 5040] $CellContext`z^3 + Rational[1, 362880] $CellContext`z^5 + 
+   Rational[-1, 39916800] $CellContext`z^7 + 
+   Rational[1, 6227020800] $CellContext`z^9, "+....."],
+  Editable->False]], "Print",
+ CellChangeTimes->{
+  3.824178916698759*^9, {3.8241790143365145`*^9, 3.824179040800118*^9}, 
+   3.8248331709539886`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"0945fc78-cf3c-4c54-84a2-052f05fd3385"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Question", " ", "2"}], ")"}], 
+    RowBox[{"f", "[", "z", "]"}]}], "=", 
+   RowBox[{
+    SuperscriptBox["z", "2"], 
+    RowBox[{"Exp", "[", 
+     FractionBox["1", "z"], "]"}]}]}], ";", " ", 
+  RowBox[{"z0", "=", "\[Infinity]"}]}]], "Text",
+ CellChangeTimes->{{3.824178775680549*^9, 3.824178806723264*^9}, 
+   3.82417906360295*^9, {3.824180079721775*^9, 3.8241800811679263`*^9}},
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"5b7f01fc-eabb-48a6-bc0f-66d231a35716"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    SuperscriptBox["z", "2"], " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"1", "/", "z"}]]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zo", "=", "\[Infinity]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "zo", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent series expantion of \>\"", ",", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z=\>\"", ",", "zo", ",", 
+   "\"\< is : \\n\>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}], ",", "\"\<+.....\>\""}], "]"}]}], "Input",
+ CellChangeTimes->{{3.824179076469844*^9, 3.8241791059762287`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"2c229918-f689-4795-b24d-c5dad5474730"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent series expantion of \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     FractionBox["1", "z"]], " ", 
+    SuperscriptBox["z", "2"]}], "\[InvisibleSpace]", "\<\" around z=\"\>", 
+   "\[InvisibleSpace]", "\[Infinity]", 
+   "\[InvisibleSpace]", "\<\" is : \\n\"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["1", "2"], "+", 
+    FractionBox["1", 
+     RowBox[{"479001600", " ", 
+      SuperscriptBox["z", "10"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"39916800", " ", 
+      SuperscriptBox["z", "9"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"3628800", " ", 
+      SuperscriptBox["z", "8"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"362880", " ", 
+      SuperscriptBox["z", "7"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"40320", " ", 
+      SuperscriptBox["z", "6"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"5040", " ", 
+      SuperscriptBox["z", "5"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"720", " ", 
+      SuperscriptBox["z", "4"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"120", " ", 
+      SuperscriptBox["z", "3"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"24", " ", 
+      SuperscriptBox["z", "2"]}]], "+", 
+    FractionBox["1", 
+     RowBox[{"6", " ", "z"}]], "+", "z", "+", 
+    SuperscriptBox["z", "2"]}], "\[InvisibleSpace]", "\<\"+.....\"\>"}],
+  SequenceForm[
+  "Laurent series expantion of ", E^($CellContext`z^(-1)) $CellContext`z^2, 
+   " around z=", 
+   DirectedInfinity[1], " is : \n", Rational[1, 2] + 
+   Rational[1, 479001600] $CellContext`z^(-10) + 
+   Rational[1, 39916800] $CellContext`z^(-9) + 
+   Rational[1, 3628800] $CellContext`z^(-8) + 
+   Rational[1, 362880] $CellContext`z^(-7) + 
+   Rational[1, 40320] $CellContext`z^(-6) + 
+   Rational[1, 5040] $CellContext`z^(-5) + 
+   Rational[1, 720] $CellContext`z^(-4) + 
+   Rational[1, 120] $CellContext`z^(-3) + Rational[1, 24] $CellContext`z^(-2) + 
+   Rational[1, 6]/$CellContext`z + $CellContext`z + $CellContext`z^2, 
+   "+....."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.82417910781579*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"2222c290-74af-409d-ad20-04ac2c43b4a4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Question", "  ", "3"}], ")"}], "f", 
+   RowBox[{"(", "z", ")"}]}], "=", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"Cot", "[", "z", "]"}], 
+     SuperscriptBox["z", "4"]], " ", "around", " ", "z"}], "=", 
+   "0"}]}]], "Text",
+ CellChangeTimes->{{3.824179436716897*^9, 3.8241794652434063`*^9}, 
+   3.8241795674079847`*^9},
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"0b69c584-1a63-496a-abec-2299a67cd558"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   FractionBox[
+    RowBox[{"Cot", "[", "z", "]"}], 
+    SuperscriptBox["z", "4"]]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zo", "=", "0"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "zo", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent series expantion of \>\"", ",", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z=\>\"", ",", "zo", ",", 
+   "\"\< is : \\n\>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}], ",", "\"\<+.....\>\""}], "]"}]}], "Input",
+ CellChangeTimes->{{3.824179480399743*^9, 3.824179487025013*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"30addb7e-f7cd-4d62-a5d3-aecadbd4fcc9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent series expantion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"Cot", "[", "z", "]"}], 
+    SuperscriptBox["z", "4"]], "\[InvisibleSpace]", "\<\" around z=\"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "\<\" is : \\n\"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["z", "5"]], "-", 
+    FractionBox["1", 
+     RowBox[{"3", " ", 
+      SuperscriptBox["z", "3"]}]], "-", 
+    FractionBox["1", 
+     RowBox[{"45", " ", "z"}]], "-", 
+    FractionBox[
+     RowBox[{"2", " ", "z"}], "945"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "3"], "4725"], "-", 
+    FractionBox[
+     RowBox[{"2", " ", 
+      SuperscriptBox["z", "5"]}], "93555"], "-", 
+    FractionBox[
+     RowBox[{"1382", " ", 
+      SuperscriptBox["z", "7"]}], "638512875"], "-", 
+    FractionBox[
+     RowBox[{"4", " ", 
+      SuperscriptBox["z", "9"]}], "18243225"]}], 
+   "\[InvisibleSpace]", "\<\"+.....\"\>"}],
+  SequenceForm[
+  "Laurent series expantion of ", $CellContext`z^(-4) Cot[$CellContext`z], 
+   " around z=", 0, " is : \n", $CellContext`z^(-5) + 
+   Rational[-1, 3] $CellContext`z^(-3) + Rational[-1, 45]/$CellContext`z + 
+   Rational[-2, 945] $CellContext`z + Rational[-1, 4725] $CellContext`z^3 + 
+   Rational[-2, 93555] $CellContext`z^5 + 
+   Rational[-1382, 638512875] $CellContext`z^7 + 
+   Rational[-4, 18243225] $CellContext`z^9, "+....."],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.824179501429834*^9},
+ CellLabel->
+  "During evaluation of \
+In[25]:=",ExpressionUUID->"fef494f1-737c-4d78-9f27-5e1f3736a833"]
+}, Open  ]],
+
+Cell["Ques 4. f[z] = 1/(z-2) around z = 0", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"a2829084-a5c7-4902-b58a-f6cde75614e9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "2"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "12"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[5]:=",ExpressionUUID->"4a33fccd-3b15-41bd-b5db-350a3c050ead"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "z"}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", "2"]}], "-", 
+    FractionBox["z", "4"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "2"], "8"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "3"], "16"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "4"], "32"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "5"], "64"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "6"], "128"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "7"], "256"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "8"], "512"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "9"], "1024"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "10"], "2048"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "11"], "4096"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "12"], "8192"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-2 + $CellContext`z)^(-1), " around z = ", 
+   0, " is :\n ", Rational[-1, 2] + Rational[-1, 4] $CellContext`z + 
+   Rational[-1, 8] $CellContext`z^2 + Rational[-1, 16] $CellContext`z^3 + 
+   Rational[-1, 32] $CellContext`z^4 + Rational[-1, 64] $CellContext`z^5 + 
+   Rational[-1, 128] $CellContext`z^6 + Rational[-1, 256] $CellContext`z^7 + 
+   Rational[-1, 512] $CellContext`z^8 + Rational[-1, 1024] $CellContext`z^9 + 
+   Rational[-1, 2048] $CellContext`z^10 + 
+   Rational[-1, 4096] $CellContext`z^11 + 
+   Rational[-1, 8192] $CellContext`z^12],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.824833501568616*^9},
+ CellLabel->
+  "During evaluation of \
+In[5]:=",ExpressionUUID->"1a89978c-5eb5-4b5b-a164-f115871a9adf"]
+}, Open  ]],
+
+Cell["Ques 5. f[z] = 1/(z-2) around z = \[Infinity]", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"6b824dee-ccb0-4b6a-a4b8-6f5772f43a8a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{"1", "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "2"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "\[Infinity]"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[9]:=",ExpressionUUID->"443e864b-db69-4eee-b784-0e133143e164"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "z"}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", 
+   "\[Infinity]", "\[InvisibleSpace]", "\<\" is :\\n \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["512", 
+     SuperscriptBox["z", "10"]], "+", 
+    FractionBox["256", 
+     SuperscriptBox["z", "9"]], "+", 
+    FractionBox["128", 
+     SuperscriptBox["z", "8"]], "+", 
+    FractionBox["64", 
+     SuperscriptBox["z", "7"]], "+", 
+    FractionBox["32", 
+     SuperscriptBox["z", "6"]], "+", 
+    FractionBox["16", 
+     SuperscriptBox["z", "5"]], "+", 
+    FractionBox["8", 
+     SuperscriptBox["z", "4"]], "+", 
+    FractionBox["4", 
+     SuperscriptBox["z", "3"]], "+", 
+    FractionBox["2", 
+     SuperscriptBox["z", "2"]], "+", 
+    FractionBox["1", "z"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-2 + $CellContext`z)^(-1), " around z = ", 
+   DirectedInfinity[1], " is :\n ", 512 $CellContext`z^(-10) + 
+   256 $CellContext`z^(-9) + 128 $CellContext`z^(-8) + 64 $CellContext`z^(-7) + 
+   32 $CellContext`z^(-6) + 16 $CellContext`z^(-5) + 8 $CellContext`z^(-4) + 
+   4 $CellContext`z^(-3) + 2 $CellContext`z^(-2) + $CellContext`z^(-1)],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335097146645`*^9},
+ CellLabel->
+  "During evaluation of \
+In[9]:=",ExpressionUUID->"1e512cb2-5d57-4a71-9bb4-82284d3335f2"]
+}, Open  ]],
+
+Cell["Ques 6. f[z] = z/((z-2)(z-3)) around z = 0", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"79d9c56f-0c5b-4faf-b32a-936c9e66a798"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{"z", "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "2"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "3"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "12"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[13]:=",ExpressionUUID->"72e250e5-823d-4c00-9a09-b24c1ec32bbe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox["z", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "3"}], "+", "z"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "z"}], ")"}]}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "0", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["z", "6"], "+", 
+    FractionBox[
+     RowBox[{"5", " ", 
+      SuperscriptBox["z", "2"]}], "36"], "+", 
+    FractionBox[
+     RowBox[{"19", " ", 
+      SuperscriptBox["z", "3"]}], "216"], "+", 
+    FractionBox[
+     RowBox[{"65", " ", 
+      SuperscriptBox["z", "4"]}], "1296"], "+", 
+    FractionBox[
+     RowBox[{"211", " ", 
+      SuperscriptBox["z", "5"]}], "7776"], "+", 
+    FractionBox[
+     RowBox[{"665", " ", 
+      SuperscriptBox["z", "6"]}], "46656"], "+", 
+    FractionBox[
+     RowBox[{"2059", " ", 
+      SuperscriptBox["z", "7"]}], "279936"], "+", 
+    FractionBox[
+     RowBox[{"6305", " ", 
+      SuperscriptBox["z", "8"]}], "1679616"], "+", 
+    FractionBox[
+     RowBox[{"19171", " ", 
+      SuperscriptBox["z", "9"]}], "10077696"], "+", 
+    FractionBox[
+     RowBox[{"58025", " ", 
+      SuperscriptBox["z", "10"]}], "60466176"], "+", 
+    FractionBox[
+     RowBox[{"175099", " ", 
+      SuperscriptBox["z", "11"]}], "362797056"], "+", 
+    FractionBox[
+     RowBox[{"527345", " ", 
+      SuperscriptBox["z", "12"]}], "2176782336"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-3 + $CellContext`z)^(-1) (-2 + \
+$CellContext`z)^(-1) $CellContext`z, " around z = ", 0, " is :\n ", 
+   Rational[1, 6] $CellContext`z + Rational[5, 36] $CellContext`z^2 + 
+   Rational[19, 216] $CellContext`z^3 + Rational[65, 1296] $CellContext`z^4 + 
+   Rational[211, 7776] $CellContext`z^5 + 
+   Rational[665, 46656] $CellContext`z^6 + 
+   Rational[2059, 279936] $CellContext`z^7 + 
+   Rational[6305, 1679616] $CellContext`z^8 + 
+   Rational[19171, 10077696] $CellContext`z^9 + 
+   Rational[58025, 60466176] $CellContext`z^10 + 
+   Rational[175099, 362797056] $CellContext`z^11 + 
+   Rational[527345, 2176782336] $CellContext`z^12],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.824833512251212*^9},
+ CellLabel->
+  "During evaluation of \
+In[13]:=",ExpressionUUID->"a357ce5e-734d-42f9-af92-53e889c4e517"]
+}, Open  ]],
+
+Cell[TextData[{
+ "Ques",
+ " ",
+ "7",
+ ".",
+ " ",
+ "f",
+ "[",
+ "z",
+ "]",
+ " ",
+ "=",
+ " ",
+ StyleBox["Sin",
+  IgnoreSpellCheck->True],
+ "[",
+ "z",
+ "]/",
+ "z",
+ "^",
+ "3",
+ " ",
+ "around",
+ " ",
+ "z",
+ " ",
+ "=",
+ " ",
+ "0"
+}], "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"4a52c595-b777-4b7d-b74e-b0a6ada310d2"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"Sin", "[", "z", "]"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "^", "3"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[17]:=",ExpressionUUID->"ddaef24e-d16c-4bde-82a5-d430f0fd4831"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    RowBox[{"Sin", "[", "z", "]"}], 
+    SuperscriptBox["z", "3"]], "\[InvisibleSpace]", "\<\" around z = \"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "\<\" is :\\n \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", "6"]}], "+", 
+    FractionBox["1", 
+     SuperscriptBox["z", "2"]], "+", 
+    FractionBox[
+     SuperscriptBox["z", "2"], "120"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "4"], "5040"], "+", 
+    FractionBox[
+     SuperscriptBox["z", "6"], "362880"], "-", 
+    FractionBox[
+     SuperscriptBox["z", "8"], "39916800"], "+", 
+    FractionBox[
+     SuperscriptBox["z", "10"], "6227020800"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", $CellContext`z^(-3) Sin[$CellContext`z], 
+   " around z = ", 0, " is :\n ", Rational[-1, 6] + $CellContext`z^(-2) + 
+   Rational[1, 120] $CellContext`z^2 + Rational[-1, 5040] $CellContext`z^4 + 
+   Rational[1, 362880] $CellContext`z^6 + 
+   Rational[-1, 39916800] $CellContext`z^8 + 
+   Rational[1, 6227020800] $CellContext`z^10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335162847385`*^9},
+ CellLabel->
+  "During evaluation of \
+In[17]:=",ExpressionUUID->"a502961d-dee0-4ab8-ab5a-0d019ea52396"]
+}, Open  ]],
+
+Cell["Ques 8. f[z] = z^3/(z-1)^3 around z = 2", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"a6ec3957-f23c-4075-ae19-0b6bc2e40aee"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"z", "^", "3"}], "/", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "^", "3"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[21]:=",ExpressionUUID->"e75263c5-2643-4cc0-b714-444a9b811775"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["z", "3"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "z"}], ")"}], "3"]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{"8", "-", 
+    RowBox[{"12", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "2"}], "+", "z"}], ")"}]}], "+", 
+    RowBox[{"18", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "2"]}], "-", 
+    RowBox[{"25", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "3"]}], "+", 
+    RowBox[{"33", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "4"]}], "-", 
+    RowBox[{"42", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "5"]}], "+", 
+    RowBox[{"52", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "6"]}], "-", 
+    RowBox[{"63", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "7"]}], "+", 
+    RowBox[{"75", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "8"]}], "-", 
+    RowBox[{"88", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "9"]}], "+", 
+    RowBox[{"102", " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "z"}], ")"}], "10"]}]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-1 + $CellContext`z)^(-3) $CellContext`z^3,
+    " around z = ", 2, " is :\n ", 8 - 12 (-2 + $CellContext`z) + 
+   18 (-2 + $CellContext`z)^2 - 25 (-2 + $CellContext`z)^3 + 
+   33 (-2 + $CellContext`z)^4 - 42 (-2 + $CellContext`z)^5 + 
+   52 (-2 + $CellContext`z)^6 - 63 (-2 + $CellContext`z)^7 + 
+   75 (-2 + $CellContext`z)^8 - 88 (-2 + $CellContext`z)^9 + 
+   102 (-2 + $CellContext`z)^10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335241379795`*^9},
+ CellLabel->
+  "During evaluation of \
+In[21]:=",ExpressionUUID->"a4adee61-c516-40e1-a2f6-8ad3caa03d15"]
+}, Open  ]],
+
+Cell["Ques 9. f[z] =  1/z  around z = 0", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"abb1bf15-3647-4e51-b858-8e28abe71f6a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{"1", "/", "z"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "0"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[25]:=",ExpressionUUID->"037eb5e0-99d8-48ca-b573-bc6c36be4501"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox["1", "z"], "\[InvisibleSpace]", "\<\" around z = \"\>", 
+   "\[InvisibleSpace]", "0", "\[InvisibleSpace]", "\<\" is :\\n \"\>", 
+   "\[InvisibleSpace]", 
+   FractionBox["1", "z"]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", $CellContext`z^(-1), " around z = ", 0, 
+   " is :\n ", $CellContext`z^(-1)],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335263896446`*^9},
+ CellLabel->
+  "During evaluation of \
+In[25]:=",ExpressionUUID->"34bf8a5c-86bd-49ad-ba53-626137d8b0c1"]
+}, Open  ]],
+
+Cell["Ques 10.a) f[z] = z^4/((z-1)(z-4)) around z = 1 ", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"36e12093-9bae-4bd2-b9bd-3f4710ddb23a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "4"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "1"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[29]:=",ExpressionUUID->"4ac2f595-2923-4a9d-8dbb-cff11989de81"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["z", "4"], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "4"}], "+", "z"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "z"}], ")"}]}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "1", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["13", "9"]}], "-", 
+    FractionBox["1", 
+     RowBox[{"3", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "z"}], ")"}]}]], "-", 
+    RowBox[{
+     FractionBox["67", "27"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "z"}], ")"}]}], "-", 
+    RowBox[{
+     FractionBox["175", "81"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "z"}], ")"}], "2"]}], "-", 
+    RowBox[{
+     FractionBox["256", "243"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "z"}], ")"}], "3"]}], "-", 
+    RowBox[{
+     FractionBox["256", "729"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", "z"}], ")"}], "4"]}], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "5"]}], "2187"], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "6"]}], "6561"], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "7"]}], "19683"], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "8"]}], "59049"], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "9"]}], "177147"], "-", 
+    FractionBox[
+     RowBox[{"256", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", "z"}], ")"}], "10"]}], "531441"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-4 + $CellContext`z)^(-1) (-1 + \
+$CellContext`z)^(-1) $CellContext`z^4, " around z = ", 1, " is :\n ", 
+   Rational[-13, 9] + Rational[-1, 3]/(-1 + $CellContext`z) + 
+   Rational[-67, 27] (-1 + $CellContext`z) + 
+   Rational[-175, 81] (-1 + $CellContext`z)^2 + 
+   Rational[-256, 243] (-1 + $CellContext`z)^3 + 
+   Rational[-256, 729] (-1 + $CellContext`z)^4 + 
+   Rational[-256, 2187] (-1 + $CellContext`z)^5 + 
+   Rational[-256, 6561] (-1 + $CellContext`z)^6 + 
+   Rational[-256, 19683] (-1 + $CellContext`z)^7 + 
+   Rational[-256, 59049] (-1 + $CellContext`z)^8 + 
+   Rational[-256, 177147] (-1 + $CellContext`z)^9 + 
+   Rational[-256, 531441] (-1 + $CellContext`z)^10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.824833531590285*^9},
+ CellLabel->
+  "During evaluation of \
+In[29]:=",ExpressionUUID->"b6c51204-3b2b-42dc-93ca-c2a51d3a12db"]
+}, Open  ]],
+
+Cell["Ques 10.b) f[z] = z^4/((z-1)(z-4)) around  z=4", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"b0492ea2-8ed7-4d99-a3dc-d064d4238f4c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"z", "^", "4"}], "/", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"z", "-", "1"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "4"}], ")"}]}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "4"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[33]:=",ExpressionUUID->"d6a87e6c-e3b5-48b9-8689-811ea6e9b0d7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["z", "4"], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "4"}], "+", "z"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "z"}], ")"}]}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "4", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{
+    FractionBox["512", "9"], "+", 
+    FractionBox["256", 
+     RowBox[{"3", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}]}]], "+", 
+    RowBox[{
+     FractionBox["352", "27"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "4"}], "+", "z"}], ")"}]}], "+", 
+    RowBox[{
+     FractionBox["80", "81"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "2"]}], "+", 
+    RowBox[{
+     FractionBox["1", "243"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "3"]}], "-", 
+    RowBox[{
+     FractionBox["1", "729"], " ", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "4"]}], "+", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "5"], "2187"], "-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "6"], "6561"], "+", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "7"], "19683"], "-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "8"], "59049"], "+", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "9"], "177147"], "-", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "4"}], "+", "z"}], ")"}], "10"], "531441"]}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-4 + $CellContext`z)^(-1) (-1 + \
+$CellContext`z)^(-1) $CellContext`z^4, " around z = ", 4, " is :\n ", 
+   Rational[512, 9] + Rational[256, 3]/(-4 + $CellContext`z) + 
+   Rational[352, 27] (-4 + $CellContext`z) + 
+   Rational[80, 81] (-4 + $CellContext`z)^2 + 
+   Rational[1, 243] (-4 + $CellContext`z)^3 + 
+   Rational[-1, 729] (-4 + $CellContext`z)^4 + 
+   Rational[1, 2187] (-4 + $CellContext`z)^5 + 
+   Rational[-1, 6561] (-4 + $CellContext`z)^6 + 
+   Rational[1, 19683] (-4 + $CellContext`z)^7 + 
+   Rational[-1, 59049] (-4 + $CellContext`z)^8 + 
+   Rational[1, 177147] (-4 + $CellContext`z)^9 + 
+   Rational[-1, 531441] (-4 + $CellContext`z)^10],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335363220863`*^9},
+ CellLabel->
+  "During evaluation of \
+In[33]:=",ExpressionUUID->"e11e377b-10e6-4d0f-b9bd-089c8c81cffa"]
+}, Open  ]],
+
+Cell["Ques 11. f[z] = z^2/(z-2) around z = 2", "Text",
+ FontWeight->Bold,
+ Background->RGBColor[
+  1, 1, 0.85],ExpressionUUID->"f06754d2-727b-4227-88f0-7cc1e28ea893"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f", "[", "z_", "]"}], "=", 
+   RowBox[{
+    RowBox[{"z", "^", "2"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "2"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"z0", "=", "2"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"L", "[", "z_", "]"}], "=", 
+   RowBox[{"Normal", "[", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{"f", "[", "z", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", "z0", ",", "10"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\n", 
+ RowBox[{"Print", "[", 
+  RowBox[{"\"\<Laurent Series Expansion of \>\"", ",", " ", 
+   RowBox[{"f", "[", "z", "]"}], ",", "\"\< around z = \>\"", ",", "z0", " ", 
+   ",", "\"\< is :\\n \>\"", ",", 
+   RowBox[{"L", "[", "z", "]"}]}], "]"}]}], "Input",
+ CellLabel->"In[37]:=",ExpressionUUID->"61b99d84-2dd8-4468-a9f4-e2174b047380"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Laurent Series Expansion of \"\>", "\[InvisibleSpace]", 
+   FractionBox[
+    SuperscriptBox["z", "2"], 
+    RowBox[{
+     RowBox[{"-", "2"}], "+", "z"}]], 
+   "\[InvisibleSpace]", "\<\" around z = \"\>", "\[InvisibleSpace]", "2", 
+   "\[InvisibleSpace]", "\<\" is :\\n \"\>", "\[InvisibleSpace]", 
+   RowBox[{"2", "+", 
+    FractionBox["4", 
+     RowBox[{
+      RowBox[{"-", "2"}], "+", "z"}]], "+", "z"}]}],
+  SequenceForm[
+  "Laurent Series Expansion of ", (-2 + $CellContext`z)^(-1) $CellContext`z^2,
+    " around z = ", 2, " is :\n ", 2 + 
+   4/(-2 + $CellContext`z) + $CellContext`z],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8248335442396827`*^9},
+ CellLabel->
+  "During evaluation of \
+In[37]:=",ExpressionUUID->"61b4881d-3281-408f-8aa6-9c1782c841bd"]
+}, Open  ]]
+},
+WindowSize->{1350, 677},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+Magnification:>1.3 Inherited,
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"477aafe5-648e-4565-b3b7-1db7c293304b"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 621, 12, 44, "Text",ExpressionUUID->"7c82c76c-38ea-4cda-a555-7de537e246b9"],
+Cell[1182, 34, 305, 7, 64, "Text",ExpressionUUID->"955b38e0-ea00-4680-9c8d-e76e49ee9178"],
+Cell[1490, 43, 1172, 30, 147, "Text",ExpressionUUID->"72283109-9ce6-4aca-906e-efe9a6735df6"],
+Cell[2665, 75, 490, 15, 86, "Text",ExpressionUUID->"23654efc-50aa-4765-b8e3-15a4ea8499e5"],
+Cell[CellGroupData[{
+Cell[3180, 94, 1071, 28, 134, "Input",ExpressionUUID->"c32d6898-fa59-4755-953a-52729a3efb67"],
+Cell[4254, 124, 1625, 42, 98, "Print",ExpressionUUID->"0945fc78-cf3c-4c54-84a2-052f05fd3385"]
+}, Open  ]],
+Cell[5894, 169, 545, 15, 82, "Text",ExpressionUUID->"5b7f01fc-eabb-48a6-bc0f-66d231a35716"],
+Cell[CellGroupData[{
+Cell[6464, 188, 1012, 26, 116, "Input",ExpressionUUID->"2c229918-f689-4795-b24d-c5dad5474730"],
+Cell[7479, 216, 2213, 59, 85, "Print",ExpressionUUID->"2222c290-74af-409d-ad20-04ac2c43b4a4"]
+}, Open  ]],
+Cell[9707, 278, 485, 15, 84, "Text",ExpressionUUID->"0b69c584-1a63-496a-abec-2299a67cd558"],
+Cell[CellGroupData[{
+Cell[10217, 297, 964, 25, 134, "Input",ExpressionUUID->"30addb7e-f7cd-4d62-a5d3-aecadbd4fcc9"],
+Cell[11184, 324, 1622, 42, 98, "Print",ExpressionUUID->"fef494f1-737c-4d78-9f27-5e1f3736a833"]
+}, Open  ]],
+Cell[12821, 369, 163, 3, 64, "Text",ExpressionUUID->"a2829084-a5c7-4902-b58a-f6cde75614e9"],
+Cell[CellGroupData[{
+Cell[13009, 376, 830, 24, 113, "Input",ExpressionUUID->"4a33fccd-3b15-41bd-b5db-350a3c050ead"],
+Cell[13842, 402, 1878, 48, 94, "Print",ExpressionUUID->"1a89978c-5eb5-4b5b-a164-f115871a9adf"]
+}, Open  ]],
+Cell[15735, 453, 173, 3, 64, "Text",ExpressionUUID->"6b824dee-ccb0-4b6a-a4b8-6f5772f43a8a"],
+Cell[CellGroupData[{
+Cell[15933, 460, 840, 24, 113, "Input",ExpressionUUID->"443e864b-db69-4eee-b784-0e133143e164"],
+Cell[16776, 486, 1496, 39, 91, "Print",ExpressionUUID->"1e512cb2-5d57-4a71-9bb4-82284d3335f2"]
+}, Open  ]],
+Cell[18287, 528, 170, 3, 64, "Text",ExpressionUUID->"79d9c56f-0c5b-4faf-b32a-936c9e66a798"],
+Cell[CellGroupData[{
+Cell[18482, 535, 936, 28, 113, "Input",ExpressionUUID->"72e250e5-823d-4c00-9a09-b24c1ec32bbe"],
+Cell[19421, 565, 2403, 65, 94, "Print",ExpressionUUID->"a357ce5e-734d-42f9-af92-53e889c4e517"]
+}, Open  ]],
+Cell[21839, 633, 347, 32, 64, "Text",ExpressionUUID->"4a52c595-b777-4b7d-b74e-b0a6ada310d2"],
+Cell[CellGroupData[{
+Cell[22211, 669, 863, 25, 113, "Input",ExpressionUUID->"ddaef24e-d16c-4bde-82a5-d430f0fd4831"],
+Cell[23077, 696, 1343, 34, 98, "Print",ExpressionUUID->"a502961d-dee0-4ab8-ab5a-0d019ea52396"]
+}, Open  ]],
+Cell[24435, 733, 167, 3, 64, "Text",ExpressionUUID->"a6ec3957-f23c-4075-ae19-0b6bc2e40aee"],
+Cell[CellGroupData[{
+Cell[24627, 740, 883, 26, 113, "Input",ExpressionUUID->"e75263c5-2643-4cc0-b714-444a9b811775"],
+Cell[25513, 768, 2437, 73, 82, "Print",ExpressionUUID->"a4adee61-c516-40e1-a2f6-8ad3caa03d15"]
+}, Open  ]],
+Cell[27965, 844, 161, 3, 64, "Text",ExpressionUUID->"abb1bf15-3647-4e51-b858-8e28abe71f6a"],
+Cell[CellGroupData[{
+Cell[28151, 851, 780, 22, 113, "Input",ExpressionUUID->"037eb5e0-99d8-48ca-b573-bc6c36be4501"],
+Cell[28934, 875, 609, 14, 90, "Print",ExpressionUUID->"34bf8a5c-86bd-49ad-ba53-626137d8b0c1"]
+}, Open  ]],
+Cell[29558, 892, 176, 3, 64, "Text",ExpressionUUID->"36e12093-9bae-4bd2-b9bd-3f4710ddb23a"],
+Cell[CellGroupData[{
+Cell[29759, 899, 961, 29, 113, "Input",ExpressionUUID->"4ac2f595-2923-4a9d-8dbb-cff11989de81"],
+Cell[30723, 930, 3277, 99, 149, "Print",ExpressionUUID->"b6c51204-3b2b-42dc-93ca-c2a51d3a12db"]
+}, Open  ]],
+Cell[34015, 1032, 174, 3, 64, "Text",ExpressionUUID->"b0492ea2-8ed7-4d99-a3dc-d064d4238f4c"],
+Cell[CellGroupData[{
+Cell[34214, 1039, 961, 29, 113, "Input",ExpressionUUID->"d6a87e6c-e3b5-48b9-8689-811ea6e9b0d7"],
+Cell[35178, 1070, 3044, 92, 149, "Print",ExpressionUUID->"e11e377b-10e6-4d0f-b9bd-089c8c81cffa"]
+}, Open  ]],
+Cell[38237, 1165, 166, 3, 64, "Text",ExpressionUUID->"f06754d2-727b-4227-88f0-7cc1e28ea893"],
+Cell[CellGroupData[{
+Cell[38428, 1172, 856, 25, 113, "Input",ExpressionUUID->"61b99d84-2dd8-4468-a9f4-e2174b047380"],
+Cell[39287, 1199, 817, 21, 94, "Print",ExpressionUUID->"61b4881d-3281-408f-8aa6-9c1782c841bd"]
+}, Open  ]]
+}
+]
+*)
+

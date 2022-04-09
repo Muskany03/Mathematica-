@@ -1,0 +1,1911 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 12.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     66102,       1901]
+NotebookOptionsPosition[     58134,       1772]
+NotebookOutlinePosition[     58537,       1788]
+CellTagsIndexPosition[     58494,       1785]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[TextData[{
+ StyleBox["Practical",
+  FontColor->RGBColor[
+   0.4235294117647059, 0.3254901960784314, 0.3254901960784314]],
+ StyleBox[" ",
+  FontColor->RGBColor[
+   0.4235294117647059, 0.3254901960784314, 0.3254901960784314]],
+ StyleBox["-",
+  FontColor->RGBColor[
+   0.4235294117647059, 0.3254901960784314, 0.3254901960784314]],
+ StyleBox[" ",
+  FontColor->RGBColor[
+   0.4235294117647059, 0.3254901960784314, 0.3254901960784314]],
+ StyleBox["8",
+  FontColor->RGBColor[
+   0.4235294117647059, 0.3254901960784314, 0.3254901960784314]]
+}], "Title",
+ TextAlignment->Center,
+ TextJustification->0,
+ Background->RGBColor[
+  0.94, 0.91, 0.88],ExpressionUUID->"d413a3ed-8f52-4757-a623-c2613c703c37"],
+
+Cell["\<\
+To determine how many terms should be used in Taylor's Series Expansion of a \
+given function F[z] around z = 0 for a specific value of z to get a \
+percentage error less than 5%.\
+\>", "Subtitle",
+ Background->RGBColor[
+  1, 0.9, 1],ExpressionUUID->"07a47a68-391f-417c-848f-5bb9062c0384"],
+
+Cell["Ques 1. F[ z ] =  \[ExponentialE]^z.", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"d146b1c3-ac30-4e13-912e-216e0f7f7461"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Exp", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"50", "+", 
+    RowBox[{"50", "I"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"pt", ",", "j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"10", "+", 
+    RowBox[{"(", 
+     RowBox[{"10", "*", 
+      RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n"}], "Input",
+ CellChangeTimes->{{3.8239697027692113`*^9, 3.8239697085080786`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c2fc3c17-097b-4eb2-8862-2d7bfa2ddb2e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.823969710243453*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"9cfe6ae1-9125-461f-ba87-d31b545b513d"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{3.82396971129242*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b4177bef-8144-41e4-9b4e-f5decac62d97"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.82396971129242*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"e8deb5db-9e53-4f57-9a96-6479385e78f7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "43"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 43],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239697120626464`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"7b0e1f9b-b917-4e92-aaaf-9f4c315c6f4a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.034818746578180425`"}],
+  SequenceForm["The Percentage error is ", 0.034818746578180425`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239697121876383`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"3ed5a72a-8122-4ebe-9ad9-8aad483a30f0"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 2. F[ z ] = Log[ z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"f6dd14bd-392d-4f4c-bde5-34ff9606703d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Log", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"20", "+", 
+    RowBox[{"20", "I"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"pt", ",", "j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"10", "+", 
+    RowBox[{"(", 
+     RowBox[{"10", "*", 
+      RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239697185529833`*^9, 3.823969723681349*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"42543f9e-47f1-4110-b9b3-cc4c2660d331"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.8239697249483557`*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"dfb2b5d3-de25-4d7c-adf0-6239f544b552"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969724995229*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"55b3df86-2446-46d9-8ffb-c3713a46d43a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", "0.`"}],
+  SequenceForm["The Percentage error is ", 0.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969724995229*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"00c49461-2f62-441a-bc76-ba601cc7e044"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.823969724995229*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"58b25450-dc04-4782-98fb-2e0a83d48ca5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "1"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 1],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969724995229*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"e64d39d9-fb07-4e7d-aac2-fde6e36da7c9"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", "0.`"}],
+  SequenceForm["The Percentage error is ", 0.],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969724995229*^9},
+ CellLabel->
+  "During evaluation of \
+In[12]:=",ExpressionUUID->"884d8fb7-aea0-4fda-a396-dc6e7b18149e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 3. F[ z ] = Sin[ z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"c09db1f8-9f0f-4232-bbf4-2b1bd21c4a91"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Sin", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"15", "+", 
+    RowBox[{"15", "I"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"pt", ",", "j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"10", "+", 
+    RowBox[{"(", 
+     RowBox[{"10", "*", 
+      RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", "pt", "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", "pt", "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239697322533836`*^9, 3.8239697387123723`*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"d60513af-d030-4f47-88fe-6f4df8a25d60"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.823969739446636*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"7278c647-1db1-4785-8289-bead946e09f3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "39"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 39],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239697395582895`*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"6a8a1b09-2edb-4cd2-a180-5544b247e797"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.04385755956873749`"}],
+  SequenceForm["The Percentage error is ", 0.04385755956873749],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239697395739145`*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"99ffcbd1-2dac-4f26-8bc2-432995257f79"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.8239697395739145`*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"e30c50d2-0183-4424-95fd-c9008ae1aa11"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "33"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 33],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239697396520324`*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"be90bff9-bfc2-436e-8f75-8d823171f548"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.022699608039437408`"}],
+  SequenceForm["The Percentage error is ", 0.022699608039437408`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969739698924*^9},
+ CellLabel->
+  "During evaluation of \
+In[24]:=",ExpressionUUID->"8188760d-e269-4c93-a277-155448ca6ac9"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 4. F[ z ] = (z^2) + z", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"d629880e-7803-4500-93c1-bd463e2adc32"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{"z", "^", "2"}], ")"}], "+", "z"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"30", "+", 
+      RowBox[{"30", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",ExpressionUUID->"43dc0a48-6b7b-456d-8c0d-de8ef21e182c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",ExpressionUUID->"6f108e3c-11fa-4b35-a0a0-84187700adee"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 2],
+  Editable->False]], "Print",ExpressionUUID->"799d6d40-51da-4806-8a0e-\
+73cbada35161"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", "0.`"}],
+  SequenceForm["The Percentage error is ", 0.],
+  Editable->False]], "Print",ExpressionUUID->"c1688ca7-6cd9-4212-a4cc-\
+9867af22adad"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",ExpressionUUID->"406b7e7c-1d1e-44a9-a70f-40504fa3a390"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "2"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 2],
+  Editable->False]], "Print",ExpressionUUID->"9a153edb-d713-4c7c-b713-\
+50218d6beb24"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", "0.`"}],
+  SequenceForm["The Percentage error is ", 0.],
+  Editable->False]], "Print",ExpressionUUID->"299f129a-a95e-4c11-9823-\
+af0050792aaf"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 5. F[ z ] = Sinh[ z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"57915e35-55bc-4b65-bef3-dbb314c753d1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Sinh", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"20", "+", 
+      RowBox[{"20", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239698027417393`*^9, 3.8239698089979153`*^9}, {
+  3.823969888669834*^9, 3.823969892455949*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"a128e332-5300-40c7-a45a-40966d9d3682"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698935965433`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"21466581-9d95-41d4-8152-7bf59e6a1c9f"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "53"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 53],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698936434183`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"c0bee26c-efef-4309-9a06-1eac29d53681"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.021617070785995764`"}],
+  SequenceForm["The Percentage error is ", 0.021617070785995764`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698936434183`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"5d4fa24a-8551-41f6-86b7-8802f354f983"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698936434183`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"cd91bbea-2f18-415b-bfe5-fb40051a94d4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "43"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 43],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698938372602`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"83dff3f7-55b9-4bf1-9085-e4838a45e27a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.024201531868692207`"}],
+  SequenceForm["The Percentage error is ", 0.024201531868692207`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.823969810671835*^9, 3.8239698938841324`*^9},
+ CellLabel->
+  "During evaluation of \
+In[69]:=",ExpressionUUID->"9286edc9-3b09-4e2c-900e-1a2adcb6ccdd"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 6. F[ z ] = Cosh[ z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"39019add-eca3-4617-b90a-4e0b40711778"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Cosh", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"35", "+", 
+      RowBox[{"35", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239698310053034`*^9, 3.823969837977367*^9}, {
+  3.823969900260009*^9, 3.823969905639863*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"1e81efbb-0b29-4aab-82c7-490aa491cbcf"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.82396990608451*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"c721c65d-f4a4-4ada-a12b-145d314963bf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "92"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 92],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.8239699062407475`*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"0162d4c9-d497-4622-b0c6-92c6e7b10c29"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.02193223045953073`"}],
+  SequenceForm["The Percentage error is ", 0.02193223045953073],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.8239699062407475`*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"5503f176-1a37-44b8-a586-864f1111e6e6"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.8239699062407475`*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"258284c6-5ee0-4075-908b-58c2ac56ff4e"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "44"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 44],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.8239699064543324`*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"5262dd10-a635-4211-b3ca-e0d3adb9aced"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.010567617749222758`"}],
+  SequenceForm["The Percentage error is ", 0.010567617749222758`],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239698387498803`*^9, 3.8239699065011864`*^9},
+ CellLabel->
+  "During evaluation of \
+In[80]:=",ExpressionUUID->"0bdaa1b4-93d4-44d6-881c-e9a124da9681"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 7. F[ z ] = 1/( 1 + z ).", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"562fb7c3-9e7f-4e8b-ab08-7e57f393a60c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"1", "/", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", "z"}], ")"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"5", "+", 
+      RowBox[{"5", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239699130236588`*^9, 3.823969945114999*^9}},
+ CellLabel->
+  "In[113]:=",ExpressionUUID->"845ced90-0926-47f8-baec-91797120d031"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{{3.823969918917625*^9, 3.8239699481413307`*^9}},
+ CellLabel->
+  "During evaluation of \
+In[113]:=",ExpressionUUID->"f5469b5c-586b-4365-ac89-f2625acdf12c"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{{3.823969918917625*^9, 3.823969948235076*^9}},
+ CellLabel->
+  "During evaluation of \
+In[113]:=",ExpressionUUID->"ad9344f3-9953-48f9-b538-ee3a00d7e60d"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{{3.823969918917625*^9, 3.823969948250696*^9}},
+ CellLabel->
+  "During evaluation of \
+In[113]:=",ExpressionUUID->"130a8e79-6481-4d06-b724-eb3f637445b7"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{{3.823969918917625*^9, 3.823969953472094*^9}},
+ CellLabel->
+  "During evaluation of \
+In[113]:=",ExpressionUUID->"d3086e00-ef08-459e-81f1-4d2d1ebacb97"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 8. F[ z ] = \[ExponentialE]^(z^2).", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"5777e294-35e0-4aca-a74e-e0aa28f6de07"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Exp", "[", 
+   RowBox[{"z", "^", "2"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"19", "+", 
+      RowBox[{"19", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.8239698612834873`*^9, 3.823969867587059*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"53d2f932-d8ea-4849-83dd-3eec5bd84d78"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.8239698686192274`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"22988e2a-4dda-40d7-ae96-b808d1aac5ca"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{3.8239698687154355`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"6782b9f2-1dc3-48ec-8434-d4a491dd6743"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.8239698687154355`*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"4f051840-68aa-45a2-a8f7-ef3ef968e3f7"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{3.823969871794999*^9},
+ CellLabel->
+  "During evaluation of \
+In[58]:=",ExpressionUUID->"66af2806-f1a3-463e-80f7-a2ee03c37958"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 9. F[ z ] = Log[ 1 + z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"80c29b90-75da-4299-9cec-1474ad222a4f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Log", "[", 
+   RowBox[{"1", "+", "z"}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"30", "+", 
+      RowBox[{"30", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "1", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",ExpressionUUID->"2be1379d-49c1-496c-a98f-d3e892aab86c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",ExpressionUUID->"be2b94c4-f568-42c7-9bb9-500f3335259b"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",ExpressionUUID->"8fb5e51e-7a94-46e2-93e0-94aad4d33202"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",ExpressionUUID->"b396ffc1-5b28-488d-81c4-cae11b9ec129"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",ExpressionUUID->"c38e5cbd-14ae-4963-8966-4777932c3a77"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Ques 10. F[ z ] = Cos[ z ].", "Text",
+ Background->RGBColor[
+  0.88, 1, 0.88],ExpressionUUID->"60d6a1e5-5864-4059-95d4-345223c2f29c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"ClearAll", "[", 
+  RowBox[{"f", ",", "pt", ",", "j", ",", "t", ",", "g", ",", "z"}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(i)\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{"f", "[", "z_", "]"}], ":=", 
+  RowBox[{"Cos", "[", "z", "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{"n", "=", "100"}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"pt", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"40", "+", 
+      RowBox[{"40", "I"}]}], ",", 
+     RowBox[{"10", "+", 
+      RowBox[{"(", 
+       RowBox[{"10", "*", 
+        RowBox[{"Sqrt", "[", "3", "]"}], "*", "I"}], ")"}]}]}], "}"}]}], 
+  ";"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}], "\n", 
+ RowBox[{"Print", "[", "\"\<(ii)\>\"", "]"}], "\n", 
+ RowBox[{"Clear", "[", 
+  RowBox[{"j", ",", "t", ",", "g", ",", "z"}], "]"}], "\n", 
+ RowBox[{"For", "[", 
+  RowBox[{
+   RowBox[{"j", "=", "1"}], ",", 
+   RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+   RowBox[{"j", "++"}], ",", "\n", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "z_", "]"}], "=", 
+     RowBox[{"Normal", "[", 
+      RowBox[{"Series", "[", 
+       RowBox[{
+        RowBox[{"f", "[", "z", "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"z", ",", "0", ",", "j"}], "}"}]}], "]"}], "]"}]}], ";", 
+    "\n", 
+    RowBox[{
+     RowBox[{"g", "[", "z_", "]"}], "=", 
+     RowBox[{
+      RowBox[{"Abs", "[", 
+       RowBox[{
+        RowBox[{"t", "[", "z", "]"}], "-", 
+        RowBox[{"f", "[", "z", "]"}]}], "]"}], "/", 
+      RowBox[{"Abs", "[", 
+       RowBox[{"f", "[", "z", "]"}], "]"}]}]}], ";", "\n", 
+    RowBox[{"If", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "\[LessEqual]", "0.05"}], ",", 
+      RowBox[{"Break", "[", "]"}]}], "]"}]}]}], "]"}], "\n", 
+ RowBox[{"If", "[", 
+  RowBox[{
+   RowBox[{"j", "==", 
+    RowBox[{"n", "+", "1"}]}], ",", 
+   RowBox[{"Print", "[", "\"\<Increase the value of n\>\"", "]"}], ",", 
+   RowBox[{
+    RowBox[{"Print", "[", 
+     RowBox[{
+     "\"\<Minimum number of terms required to get a percentage error less \
+than 5% is \>\"", ",", "j"}], "]"}], ";", 
+    RowBox[{"Print", "[", 
+     RowBox[{"\"\<The Percentage error is \>\"", ",", 
+      RowBox[{"N", "[", 
+       RowBox[{"g", "[", 
+        RowBox[{"pt", "[", 
+         RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], "]"}], ";"}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.823969992376486*^9, 3.8239699966967897`*^9}},
+ CellLabel->
+  "In[124]:=",ExpressionUUID->"8d3d7106-9d4c-4031-afc4-41bbcb589540"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"(i)\"\>"], "Print",
+ CellChangeTimes->{3.823969997615314*^9},
+ CellLabel->
+  "During evaluation of \
+In[124]:=",ExpressionUUID->"6429cba9-8197-4b17-8e5c-20140f59299c"],
+
+Cell[BoxData["\<\"Increase the value of n\"\>"], "Print",
+ CellChangeTimes->{3.8239699979796176`*^9},
+ CellLabel->
+  "During evaluation of \
+In[124]:=",ExpressionUUID->"4bf12a1a-ac44-4aff-b582-58e757c47d23"],
+
+Cell[BoxData["\<\"(ii)\"\>"], "Print",
+ CellChangeTimes->{3.8239699979796176`*^9},
+ CellLabel->
+  "During evaluation of \
+In[124]:=",ExpressionUUID->"5ccffe1e-9108-4510-99c7-8e14fa4c72d1"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Minimum number of terms required to get a percentage error \
+less than 5% is \"\>", "\[InvisibleSpace]", "32"}],
+  SequenceForm[
+  "Minimum number of terms required to get a percentage error less than 5% is \
+", 32],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239699980733457`*^9},
+ CellLabel->
+  "During evaluation of \
+In[124]:=",ExpressionUUID->"2d371cbd-6fa3-4fd7-a0f7-5d6d5ea99cb4"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"The Percentage error is \"\>", "\[InvisibleSpace]", 
+   "0.03995785996716755`"}],
+  SequenceForm["The Percentage error is ", 0.03995785996716755],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8239699981358447`*^9},
+ CellLabel->
+  "During evaluation of \
+In[124]:=",ExpressionUUID->"e38b257b-836a-408a-a638-827656409efd"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1366, 685},
+WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+FrontEndVersion->"12.2 for Microsoft Windows (64-bit) (December 12, 2020)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"e84cdcb9-0bcc-4886-905f-1395b4c0a192"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 696, 20, 112, "Title",ExpressionUUID->"d413a3ed-8f52-4757-a623-c2613c703c37"],
+Cell[1279, 44, 299, 6, 101, "Subtitle",ExpressionUUID->"07a47a68-391f-417c-848f-5bb9062c0384"],
+Cell[1581, 52, 148, 2, 50, "Text",ExpressionUUID->"d146b1c3-ac30-4e13-912e-216e0f7f7461"],
+Cell[CellGroupData[{
+Cell[1754, 58, 3702, 108, 390, "Input",ExpressionUUID->"c2fc3c17-097b-4eb2-8862-2d7bfa2ddb2e"],
+Cell[CellGroupData[{
+Cell[5481, 170, 183, 4, 22, "Print",ExpressionUUID->"9cfe6ae1-9125-461f-ba87-d31b545b513d"],
+Cell[5667, 176, 202, 4, 22, "Print",ExpressionUUID->"b4177bef-8144-41e4-9b4e-f5decac62d97"],
+Cell[5872, 182, 183, 4, 22, "Print",ExpressionUUID->"e8deb5db-9e53-4f57-9a96-6479385e78f7"],
+Cell[6058, 188, 443, 11, 22, "Print",ExpressionUUID->"7b0e1f9b-b917-4e92-aaaf-9f4c315c6f4a"],
+Cell[6504, 201, 376, 9, 22, "Print",ExpressionUUID->"3ed5a72a-8122-4ebe-9ad9-8aad483a30f0"]
+}, Open  ]]
+}, Open  ]],
+Cell[6907, 214, 138, 2, 50, "Text",ExpressionUUID->"f6dd14bd-392d-4f4c-bde5-34ff9606703d"],
+Cell[CellGroupData[{
+Cell[7070, 220, 3807, 111, 390, "Input",ExpressionUUID->"42543f9e-47f1-4110-b9b3-cc4c2660d331"],
+Cell[CellGroupData[{
+Cell[10902, 335, 186, 4, 22, "Print",ExpressionUUID->"dfb2b5d3-de25-4d7c-adf0-6239f544b552"],
+Cell[11091, 341, 440, 11, 22, "Print",ExpressionUUID->"55b3df86-2446-46d9-8ffb-c3713a46d43a"],
+Cell[11534, 354, 334, 8, 22, "Print",ExpressionUUID->"00c49461-2f62-441a-bc76-ba601cc7e044"],
+Cell[11871, 364, 185, 4, 22, "Print",ExpressionUUID->"58b25450-dc04-4782-98fb-2e0a83d48ca5"],
+Cell[12059, 370, 440, 11, 22, "Print",ExpressionUUID->"e64d39d9-fb07-4e7d-aac2-fde6e36da7c9"],
+Cell[12502, 383, 334, 8, 22, "Print",ExpressionUUID->"884d8fb7-aea0-4fda-a396-dc6e7b18149e"]
+}, Open  ]]
+}, Open  ]],
+Cell[12863, 395, 138, 2, 50, "Text",ExpressionUUID->"c09db1f8-9f0f-4232-bbf4-2b1bd21c4a91"],
+Cell[CellGroupData[{
+Cell[13026, 401, 3809, 111, 390, "Input",ExpressionUUID->"d60513af-d030-4f47-88fe-6f4df8a25d60"],
+Cell[CellGroupData[{
+Cell[16860, 516, 184, 4, 22, "Print",ExpressionUUID->"7278c647-1db1-4785-8289-bead946e09f3"],
+Cell[17047, 522, 444, 11, 22, "Print",ExpressionUUID->"6a8a1b09-2edb-4cd2-a180-5544b247e797"],
+Cell[17494, 535, 374, 9, 22, "Print",ExpressionUUID->"99ffcbd1-2dac-4f26-8bc2-432995257f79"],
+Cell[17871, 546, 187, 4, 22, "Print",ExpressionUUID->"e30c50d2-0183-4424-95fd-c9008ae1aa11"],
+Cell[18061, 552, 444, 11, 22, "Print",ExpressionUUID->"be90bff9-bfc2-436e-8f75-8d823171f548"],
+Cell[18508, 565, 375, 9, 22, "Print",ExpressionUUID->"8188760d-e269-4c93-a277-155448ca6ac9"]
+}, Open  ]]
+}, Open  ]],
+Cell[18910, 578, 138, 2, 50, "Text",ExpressionUUID->"d629880e-7803-4500-93c1-bd463e2adc32"],
+Cell[CellGroupData[{
+Cell[19073, 584, 4007, 121, 371, "Input",ExpressionUUID->"43dc0a48-6b7b-456d-8c0d-de8ef21e182c"],
+Cell[CellGroupData[{
+Cell[23105, 709, 92, 0, 22, "Print",ExpressionUUID->"6f108e3c-11fa-4b35-a0a0-84187700adee"],
+Cell[23200, 711, 350, 8, 22, "Print",ExpressionUUID->"799d6d40-51da-4806-8a0e-73cbada35161"],
+Cell[23553, 721, 244, 5, 22, "Print",ExpressionUUID->"c1688ca7-6cd9-4212-a4cc-9867af22adad"],
+Cell[23800, 728, 93, 0, 22, "Print",ExpressionUUID->"406b7e7c-1d1e-44a9-a70f-40504fa3a390"],
+Cell[23896, 730, 350, 8, 22, "Print",ExpressionUUID->"9a153edb-d713-4c7c-b713-50218d6beb24"],
+Cell[24249, 740, 244, 5, 22, "Print",ExpressionUUID->"299f129a-a95e-4c11-9823-af0050792aaf"]
+}, Open  ]]
+}, Open  ]],
+Cell[24520, 749, 139, 2, 50, "Text",ExpressionUUID->"57915e35-55bc-4b65-bef3-dbb314c753d1"],
+Cell[CellGroupData[{
+Cell[24684, 755, 4109, 122, 371, "Input",ExpressionUUID->"a128e332-5300-40c7-a45a-40966d9d3682"],
+Cell[CellGroupData[{
+Cell[28818, 881, 208, 4, 22, "Print",ExpressionUUID->"21466581-9d95-41d4-8152-7bf59e6a1c9f"],
+Cell[29029, 887, 466, 11, 22, "Print",ExpressionUUID->"c0bee26c-efef-4309-9a06-1eac29d53681"],
+Cell[29498, 900, 399, 9, 22, "Print",ExpressionUUID->"5d4fa24a-8551-41f6-86b7-8802f354f983"],
+Cell[29900, 911, 209, 4, 22, "Print",ExpressionUUID->"cd91bbea-2f18-415b-bfe5-fb40051a94d4"],
+Cell[30112, 917, 466, 11, 22, "Print",ExpressionUUID->"83dff3f7-55b9-4bf1-9085-e4838a45e27a"],
+Cell[30581, 930, 399, 9, 22, "Print",ExpressionUUID->"9286edc9-3b09-4e2c-900e-1a2adcb6ccdd"]
+}, Open  ]]
+}, Open  ]],
+Cell[31007, 943, 139, 2, 50, "Text",ExpressionUUID->"39019add-eca3-4617-b90a-4e0b40711778"],
+Cell[CellGroupData[{
+Cell[31171, 949, 4107, 122, 371, "Input",ExpressionUUID->"1e81efbb-0b29-4aab-82c7-490aa491cbcf"],
+Cell[CellGroupData[{
+Cell[35303, 1075, 207, 4, 22, "Print",ExpressionUUID->"c721c65d-f4a4-4ada-a12b-145d314963bf"],
+Cell[35513, 1081, 468, 11, 22, "Print",ExpressionUUID->"0162d4c9-d497-4622-b0c6-92c6e7b10c29"],
+Cell[35984, 1094, 398, 9, 22, "Print",ExpressionUUID->"5503f176-1a37-44b8-a586-864f1111e6e6"],
+Cell[36385, 1105, 211, 4, 22, "Print",ExpressionUUID->"258284c6-5ee0-4075-908b-58c2ac56ff4e"],
+Cell[36599, 1111, 468, 11, 22, "Print",ExpressionUUID->"5262dd10-a635-4211-b3ca-e0d3adb9aced"],
+Cell[37070, 1124, 401, 9, 22, "Print",ExpressionUUID->"0bdaa1b4-93d4-44d6-881c-e9a124da9681"]
+}, Open  ]]
+}, Open  ]],
+Cell[37498, 1137, 141, 2, 50, "Text",ExpressionUUID->"562fb7c3-9e7f-4e8b-ab08-7e57f393a60c"],
+Cell[CellGroupData[{
+Cell[37664, 1143, 4101, 124, 371, "Input",ExpressionUUID->"845ced90-0926-47f8-baec-91797120d031"],
+Cell[CellGroupData[{
+Cell[41790, 1271, 211, 4, 22, "Print",ExpressionUUID->"f5469b5c-586b-4365-ac89-f2625acdf12c"],
+Cell[42004, 1277, 229, 4, 22, "Print",ExpressionUUID->"ad9344f3-9953-48f9-b538-ee3a00d7e60d"],
+Cell[42236, 1283, 210, 4, 22, "Print",ExpressionUUID->"130a8e79-6481-4d06-b724-eb3f637445b7"],
+Cell[42449, 1289, 229, 4, 22, "Print",ExpressionUUID->"d3086e00-ef08-459e-81f1-4d2d1ebacb97"]
+}, Open  ]]
+}, Open  ]],
+Cell[42705, 1297, 151, 2, 50, "Text",ExpressionUUID->"5777e294-35e0-4aca-a74e-e0aa28f6de07"],
+Cell[CellGroupData[{
+Cell[42881, 1303, 4081, 122, 371, "Input",ExpressionUUID->"53d2f932-d8ea-4849-83dd-3eec5bd84d78"],
+Cell[CellGroupData[{
+Cell[46987, 1429, 186, 4, 22, "Print",ExpressionUUID->"22988e2a-4dda-40d7-ae96-b808d1aac5ca"],
+Cell[47176, 1435, 206, 4, 22, "Print",ExpressionUUID->"6782b9f2-1dc3-48ec-8434-d4a491dd6743"],
+Cell[47385, 1441, 187, 4, 22, "Print",ExpressionUUID->"4f051840-68aa-45a2-a8f7-ef3ef968e3f7"],
+Cell[47575, 1447, 204, 4, 22, "Print",ExpressionUUID->"66af2806-f1a3-463e-80f7-a2ee03c37958"]
+}, Open  ]]
+}, Open  ]],
+Cell[47806, 1455, 142, 2, 50, "Text",ExpressionUUID->"80c29b90-75da-4299-9cec-1474ad222a4f"],
+Cell[CellGroupData[{
+Cell[47973, 1461, 3989, 120, 371, "Input",ExpressionUUID->"2be1379d-49c1-496c-a98f-d3e892aab86c"],
+Cell[CellGroupData[{
+Cell[51987, 1585, 92, 0, 22, "Print",ExpressionUUID->"be2b94c4-f568-42c7-9bb9-500f3335259b"],
+Cell[52082, 1587, 112, 0, 22, "Print",ExpressionUUID->"8fb5e51e-7a94-46e2-93e0-94aad4d33202"],
+Cell[52197, 1589, 93, 0, 22, "Print",ExpressionUUID->"b396ffc1-5b28-488d-81c4-cae11b9ec129"],
+Cell[52293, 1591, 112, 0, 22, "Print",ExpressionUUID->"c38e5cbd-14ae-4963-8966-4777932c3a77"]
+}, Open  ]]
+}, Open  ]],
+Cell[52432, 1595, 139, 2, 50, "Text",ExpressionUUID->"60d6a1e5-5864-4059-95d4-345223c2f29c"],
+Cell[CellGroupData[{
+Cell[52596, 1601, 4061, 122, 371, "Input",ExpressionUUID->"8d3d7106-9d4c-4031-afc4-41bbcb589540"],
+Cell[CellGroupData[{
+Cell[56682, 1727, 185, 4, 22, "Print",ExpressionUUID->"6429cba9-8197-4b17-8e5c-20140f59299c"],
+Cell[56870, 1733, 207, 4, 22, "Print",ExpressionUUID->"4bf12a1a-ac44-4aff-b582-58e757c47d23"],
+Cell[57080, 1739, 188, 4, 22, "Print",ExpressionUUID->"5ccffe1e-9108-4510-99c7-8e14fa4c72d1"],
+Cell[57271, 1745, 445, 11, 22, "Print",ExpressionUUID->"2d371cbd-6fa3-4fd7-a0f7-5d6d5ea99cb4"],
+Cell[57719, 1758, 375, 9, 22, "Print",ExpressionUUID->"e38b257b-836a-408a-a638-827656409efd"]
+}, Open  ]]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+
